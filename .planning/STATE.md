@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Every page must load fast, rank well, and convert visitors into phone calls or form submissions.
-**Current focus:** Phase 3 — Homepage
+**Current focus:** Phase 4 — Service Pages
 
 ## Current Position
 
-Phase: 3 of 7 (Homepage)
-Plan: 1 of 2 in current phase (Plan 03-01 COMPLETE)
-Status: In progress
-Last activity: 2026-04-05 — Completed 03-01-PLAN.md (homepage hero, all sections, ScrollReveal)
+Phase: 3 of 7 (Homepage) — COMPLETE
+Plan: 2 of 2 in current phase (Plan 03-02 COMPLETE)
+Status: Phase 3 complete — ready for Phase 4
+Last activity: 2026-04-05 — Completed 03-02-PLAN.md (ScrollReveal animations on all below-fold homepage sections)
 
-Progress: [██████░░░░] ~40%
+Progress: [███████░░░] ~45%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 6
+- Total plans completed: 7
 - Average duration: ~4 min
-- Total execution time: ~25 min
+- Total execution time: ~28 min
 
 **By Phase:**
 
@@ -29,10 +29,10 @@ Progress: [██████░░░░] ~40%
 |-------|-------|-------|----------|
 | 01-foundation | 3/3 | 17 min | ~6 min |
 | 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
-| 03-homepage | 1/2 | 4 min | 4 min |
+| 03-homepage | 2/2 | ~7 min | ~3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-03 (9 min), 02-01 (~2 min), 02-02 (~2 min), 03-01 (4 min)
+- Last 5 plans: 02-01 (~2 min), 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min)
 - Trend: Fast execution — build verification as primary gate
 
 *Updated after each plan completion*
@@ -74,6 +74,8 @@ Recent decisions affecting current work:
 - [03-01]: All 4 homepage sections fully built in Plan 01 (not deferred to Plan 02)
 - [03-01]: Service icon map: Record<slug, ReactNode> pattern for icon-to-service association
 - [03-01]: StarRating as server-rendered SVG function — zero client JS cost
+- [03-02]: ScrollReveal wraps section content inside container div (not the section element) — preserves semantic HTML
+- [03-02]: 03-01 built all sections; 03-02 scope was adding scroll reveal animation only (expected per Wave 1 decision)
 
 ### Pending Todos
 
@@ -89,6 +91,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T23:12:20Z
-Stopped at: Phase 3 Plan 01 complete. Homepage fully built (hero, services, trust, testimonials, areas). ScrollReveal created.
+Last session: 2026-04-05T23:17:00Z
+Stopped at: Phase 3 Plan 02 complete. Homepage fully complete with ScrollReveal on all below-fold sections. Phase 3 done.
 Resume file: None
