@@ -177,19 +177,19 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-18 | Phase 1 | Complete |
 | CONV-01 | Phase 1 | Complete |
 | CONV-02 | Phase 1 | Complete |
-| CONV-03 | Phase 3 | Pending |
+| CONV-03 | Phase 3 | Complete |
 | CONV-04 | Phase 6 | Pending |
 | CONV-05 | Phase 6 | Pending |
-| CONV-06 | Phase 3 | Pending |
-| CONV-07 | Phase 3 | Pending |
+| CONV-06 | Phase 3 | Complete |
+| CONV-07 | Phase 3 | Complete |
 | CONV-08 | Phase 4 | Pending |
 | CONV-09 | Phase 4 | Pending |
-| HOME-01 | Phase 3 | Pending |
-| HOME-02 | Phase 3 | Pending |
-| HOME-03 | Phase 3 | Pending |
-| HOME-04 | Phase 3 | Pending |
-| HOME-05 | Phase 3 | Pending |
-| HOME-06 | Phase 3 | Pending |
+| HOME-01 | Phase 3 | Complete |
+| HOME-02 | Phase 3 | Complete |
+| HOME-03 | Phase 3 | Complete |
+| HOME-04 | Phase 3 | Complete |
+| HOME-05 | Phase 3 | Complete |
+| HOME-06 | Phase 3 | Complete |
 | SERV-01 | Phase 4 | Pending |
 | SERV-02 | Phase 4 | Pending |
 | SERV-03 | Phase 4 | Pending |
@@ -213,7 +213,7 @@ Which phases cover which requirements. Updated during roadmap creation.
 | NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 1 | Complete |
 | NAV-03 | Phase 1 | Complete |
-| NAV-04 | Phase 3 | Pending |
+| NAV-04 | Phase 3 | Complete |
 | NAV-05 | Phase 1 | Complete |
 | NAV-06 | Phase 1 | Complete |
 
