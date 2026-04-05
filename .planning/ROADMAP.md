@@ -48,11 +48,11 @@ Plans:
   2. The homepage JSON-LD contains a valid LocalBusiness schema with correct address, phone, rating, and hours
   3. Each schema generator function (Service, FAQPage, BreadcrumbList, AggregateRating) returns typed output with no missing required fields
   4. Calling generateMetadata() for any service or area page returns a unique title tag, meta description, canonical URL, and Open Graph image
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: Build lib/schema/*.ts typed schema generators for LocalBusiness, Service, FAQPage, BreadcrumbList, and AggregateRating; wire JSON-LD injection pattern into page template
-- [ ] 02-02: Configure next-sitemap, write public/robots.txt, create OG image assets (1200x630px), implement generateMetadata() canonical URL pattern and Open Graph tags in the root layout and page templates
+- [ ] 02-01-PLAN.md — Create business.ts constants, install schema-dts, build 5 typed schema generators (LocalBusiness, Service, FAQPage, BreadcrumbList, AggregateRating) and JsonLd injection component
+- [ ] 02-02-PLAN.md — Create native sitemap.ts, robots.ts, branded OG image (1200x630), and reusable generatePageMetadata() helper
 
 ### Phase 3: Homepage
 **Goal**: A visitor landing on the homepage sees a fast-loading, professional page that communicates trust, lists services, shows reviews, and offers multiple paths to contact — all above and below the fold.
