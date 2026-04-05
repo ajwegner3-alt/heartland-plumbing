@@ -9,29 +9,30 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 
 ## Current Position
 
-Phase: 1 of 7 (Foundation)
-Plan: 3 of 3 in current phase (Phase 1 COMPLETE)
+Phase: 2 of 7 (SEO Infrastructure)
+Plan: 2 of 2 in current phase (Phase 2 COMPLETE)
 Status: Phase complete
-Last activity: 2026-04-05 — Completed 01-03-PLAN.md (data layer: services, areas, testimonials)
+Last activity: 2026-04-05 — Completed 02-02-PLAN.md (sitemap, robots, OG image, metadata helper)
 
-Progress: [███░░░░░░░] ~15%
+Progress: [█████░░░░░] ~30%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 3
-- Average duration: 6 min
-- Total execution time: 17 min
+- Total plans completed: 5
+- Average duration: 5 min
+- Total execution time: ~21 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 01-foundation | 3/3 | 17 min | ~6 min |
+| 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6 min), 01-02 (2 min), 01-03 (9 min)
-- Trend: Stable — content-heavy plan took longer than layout work as expected
+- Last 5 plans: 01-01 (6 min), 01-02 (2 min), 01-03 (9 min), 02-01 (~2 min), 02-02 (~2 min)
+- Trend: SEO infrastructure plans fast — mostly file creation with build verification
 
 *Updated after each plan completion*
 
@@ -57,6 +58,10 @@ Recent decisions affecting current work:
 - [01-03]: 8 areas: omaha, bellevue, papillion, la-vista, ralston, elkhorn, gretna, bennington
 - [01-03]: meta descriptions 144-156 chars (±5 variance from 150-155 target — acceptable)
 - [01-03]: testimonials.serviceType[] enables per-service page filtering without a database
+- [02-02]: Native MetadataRoute.Sitemap/Robots used — no next-sitemap package (redundant for App Router)
+- [02-02]: opengraph-image.png placed in app/ not public/ — Next.js auto-detection requires app/ placement
+- [02-02]: generatePageMetadata() takes relative path; metadataBase in layout.tsx resolves to full URL
+- [02-02]: 'as const' on changeFrequency in .map() callbacks prevents TS literal widening
 
 ### Pending Todos
 
@@ -72,6 +77,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T19:30:29Z
-Stopped at: Phase 1 complete and verified. Ready for /gsd:plan-phase 2
+Last session: 2026-04-05T22:00:41Z
+Stopped at: Phase 2 complete. Both plans (02-01 schema generators, 02-02 sitemap/robots/OG/metadata) finished.
 Resume file: None
