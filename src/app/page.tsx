@@ -1,21 +1,21 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { JsonLd } from '@/components/JsonLd'
 import { generateLocalBusinessSchema } from '@/lib/schema/local-business'
 import { generateAggregateRatingSchema } from '@/lib/schema/aggregate-rating'
+import { generatePageMetadata } from '@/lib/metadata'
 import { BUSINESS } from '@/lib/data/business'
 import { services } from '@/lib/data/services'
 import { testimonials } from '@/lib/data/testimonials'
 import { areas } from '@/lib/data/service-areas'
 import { ScrollReveal } from '@/components/ScrollReveal'
 
-export const metadata: Metadata = {
+export const metadata = generatePageMetadata({
   title: 'Plumber in Omaha, NE',
   description:
     'Licensed Omaha plumber since 1998. 4.9-star rating, 312 reviews. Same-day service, 24/7 emergency calls. Free estimates — call (402) 555-0147.',
-  alternates: { canonical: '/' },
-}
+  path: '/',
+})
 
 // Star rating helper — server-rendered SVG stars
 function StarRating({ rating, size = 14 }: { rating: number; size?: number }) {
