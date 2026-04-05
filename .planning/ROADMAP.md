@@ -12,7 +12,7 @@ Build a high-performance Next.js portfolio demo for Heartland Plumbing Co. — a
 
 Decimal phases appear between their surrounding integers in numeric order.
 
-- [ ] **Phase 1: Foundation** - Next.js scaffold, brand tokens, layout shell, data files, font/image patterns
+- [x] **Phase 1: Foundation** - Next.js scaffold, brand tokens, layout shell, data files, font/image patterns
 - [ ] **Phase 2: SEO Infrastructure** - Schema generators, metadata API, sitemap, robots.txt, OG images, internal link matrix
 - [ ] **Phase 3: Homepage** - Full homepage with hero, services grid, trust bar, testimonials, area overview, and footer
 - [ ] **Phase 4: Service Pages** - Four dedicated service pages generated from data, with FAQ, schema, and cross-links
@@ -138,7 +138,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4 → 5 → 6 → 7
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Foundation | 0/3 | Not started | - |
+| 1. Foundation | 3/3 | Complete | 2026-04-05 |
 | 2. SEO Infrastructure | 0/2 | Not started | - |
 | 3. Homepage | 0/2 | Not started | - |
 | 4. Service Pages | 0/2 | Not started | - |

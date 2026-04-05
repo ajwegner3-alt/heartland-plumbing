@@ -147,11 +147,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PERF-01 | Phase 1 | Pending |
-| PERF-02 | Phase 1 | Pending |
-| PERF-03 | Phase 1 | Pending |
-| PERF-04 | Phase 1 | Pending |
-| PERF-05 | Phase 1 | Pending |
+| PERF-01 | Phase 1 | Complete |
+| PERF-02 | Phase 1 | Complete |
+| PERF-03 | Phase 1 | Complete |
+| PERF-04 | Phase 1 | Complete |
+| PERF-05 | Phase 1 | Complete |
 | PERF-06 | Phase 7 | Pending |
 | PERF-07 | Phase 7 | Pending |
 | PERF-08 | Phase 7 | Pending |
@@ -174,9 +174,9 @@ Which phases cover which requirements. Updated during roadmap creation.
 | SEO-15 | Phase 2 | Pending |
 | SEO-16 | Phase 2 | Pending |
 | SEO-17 | Phase 2 | Pending |
-| SEO-18 | Phase 1 | Pending |
-| CONV-01 | Phase 1 | Pending |
-| CONV-02 | Phase 1 | Pending |
+| SEO-18 | Phase 1 | Complete |
+| CONV-01 | Phase 1 | Complete |
+| CONV-02 | Phase 1 | Complete |
 | CONV-03 | Phase 3 | Pending |
 | CONV-04 | Phase 6 | Pending |
 | CONV-05 | Phase 6 | Pending |
@@ -210,12 +210,12 @@ Which phases cover which requirements. Updated during roadmap creation.
 | ABOUT-02 | Phase 6 | Pending |
 | CONTACT-01 | Phase 6 | Pending |
 | CONTACT-02 | Phase 6 | Pending |
-| NAV-01 | Phase 1 | Pending |
-| NAV-02 | Phase 1 | Pending |
-| NAV-03 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Complete |
+| NAV-02 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete |
 | NAV-04 | Phase 3 | Pending |
-| NAV-05 | Phase 1 | Pending |
-| NAV-06 | Phase 1 | Pending |
+| NAV-05 | Phase 1 | Complete |
+| NAV-06 | Phase 1 | Complete |
 
 **Coverage:**
 - v1 requirements: 55 total

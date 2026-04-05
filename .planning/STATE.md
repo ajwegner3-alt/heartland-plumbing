@@ -5,7 +5,7 @@
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Every page must load fast, rank well, and convert visitors into phone calls or form submissions.
-**Current focus:** Phase 1 — Foundation
+**Current focus:** Phase 2 — SEO Infrastructure
 
 ## Current Position
 
@@ -67,11 +67,11 @@ Recent decisions affecting current work:
 - [Phase 2]: Resend API key must be added to Vercel dashboard before Phase 6 — test live form on first deploy, not locally
 - [General]: Tailwind v4 + @tailwindcss/typography compatibility unconfirmed — run `npm show @tailwindcss/typography version` before install; fall back to Tailwind v3.4.x if needed
 - [Phase 2+]: Vercel not yet connected — must be done before first deploy of layout shell
-- [Phase 2]: Footer/MobileNav hardcoded area slugs include "millard" and "gretna" — data layer uses "gretna" and "bennington". Footer/Nav must be updated in Phase 2 to use the areas array (no more hardcoded slugs)
+- [RESOLVED]: Footer Millard→Bennington slug mismatch fixed in orchestrator commit 8f7b31a
 - [RESOLVED 01-03]: Area content briefs no longer needed — all 8 areas have unique content authored in service-areas.ts
 
 ## Session Continuity
 
 Last session: 2026-04-05T19:30:29Z
-Stopped at: Completed 01-03-PLAN.md — data layer done, Phase 1 complete, pushed to GitHub
+Stopped at: Phase 1 complete and verified. Ready for /gsd:plan-phase 2
 Resume file: None
