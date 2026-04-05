@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 
 ## Current Position
 
-Phase: 3 of 7 (Homepage) — COMPLETE
-Plan: 2 of 2 in current phase (Plan 03-02 COMPLETE)
-Status: Phase 3 complete — ready for Phase 4
-Last activity: 2026-04-05 — Completed 03-02-PLAN.md (ScrollReveal animations on all below-fold homepage sections)
+Phase: 4 of 7 (Service Pages) — In Progress
+Plan: 1 of 2 in current phase (Plan 04-01 COMPLETE)
+Status: In progress — Plan 04-02 remaining
+Last activity: 2026-04-05 — Completed 04-01-PLAN.md (Dynamic service page route with emergency styling, 4 SSG pages)
 
-Progress: [███████░░░] ~45%
+Progress: [████████░░] ~53%
 
 ## Performance Metrics
 
@@ -30,6 +30,7 @@ Progress: [███████░░░] ~45%
 | 01-foundation | 3/3 | 17 min | ~6 min |
 | 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
 | 03-homepage | 2/2 | ~7 min | ~3.5 min |
+| 04-service-pages | 1/2 | ~4 min | ~4 min |
 
 **Recent Trend:**
 - Last 5 plans: 02-01 (~2 min), 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min)
@@ -76,6 +77,11 @@ Recent decisions affecting current work:
 - [03-01]: StarRating as server-rendered SVG function — zero client JS cost
 - [03-02]: ScrollReveal wraps section content inside container div (not the section element) — preserves semantic HTML
 - [03-02]: 03-01 built all sections; 03-02 scope was adding scroll reveal animation only (expected per Wave 1 decision)
+- [04-01]: isEmergency = service.slug === 'emergency-plumbing' — single boolean drives all conditional styling, no separate component
+- [04-01]: 24/7 alert strip added above banner on emergency page — ensures urgency is above-fold on all screen sizes
+- [04-01]: /services index created as Rule 2 fix — breadcrumb schema + nav both reference /services URL, would 404 without it
+- [04-01]: Sticky sidebar on description section (lg:sticky lg:top-6) for pricing callout + CTA visible while reading paragraphs
+- [04-01]: CSS FAQ accordion: <details>/<summary> with group-open:rotate-45 on + icon — zero JS, no hydration cost
 
 ### Pending Todos
 
@@ -91,6 +97,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T23:17:00Z
-Stopped at: Phase 3 Plan 02 complete. Homepage fully complete with ScrollReveal on all below-fold sections. Phase 3 done.
+Last session: 2026-04-05T23:51:48Z
+Stopped at: Phase 4 Plan 01 complete. All 4 service pages pre-rendered. Emergency page has red styling + giant phone CTA. /services index created.
 Resume file: None
