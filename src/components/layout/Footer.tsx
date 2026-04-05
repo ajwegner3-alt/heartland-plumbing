@@ -14,14 +14,14 @@ const areaLinks = [
   { name: 'La Vista', href: '/service-areas/la-vista' },
   { name: 'Ralston', href: '/service-areas/ralston' },
   { name: 'Gretna', href: '/service-areas/gretna' },
-  { name: 'Millard', href: '/service-areas/millard' },
   { name: 'Elkhorn', href: '/service-areas/elkhorn' },
+  { name: 'Bennington', href: '/service-areas/bennington' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-dark text-white">
-      <div className="max-w-[1320px] mx-auto px-[36px] pt-[60px] pb-6 pb-6 md:pb-6">
+      <div className="max-w-[1320px] mx-auto px-[36px] pt-[60px] pb-20 md:pb-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Column 1: Company info */}
           <div className="sm:col-span-2 lg:col-span-1">
