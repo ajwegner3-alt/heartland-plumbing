@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Bitter, Nunito_Sans } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
+import MobileCTA from '@/components/layout/MobileCTA'
 
 const bitter = Bitter({
   subsets: ['latin'],
@@ -34,7 +37,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bitter.variable} ${nunitoSans.variable}`}>
       <body className="font-body text-text-primary antialiased pb-20 md:pb-0">
-        {children}
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <MobileCTA />
       </body>
     </html>
   )
