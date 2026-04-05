@@ -58,6 +58,10 @@ Recent decisions affecting current work:
 - [01-03]: 8 areas: omaha, bellevue, papillion, la-vista, ralston, elkhorn, gretna, bennington
 - [01-03]: meta descriptions 144-156 chars (±5 variance from 150-155 target — acceptable)
 - [01-03]: testimonials.serviceType[] enables per-service page filtering without a database
+- [02-01]: JSON-LD via plain <script dangerouslySetInnerHTML> — next/Script causes RSC payload duplication
+- [02-01]: Plumber @type used (more specific than generic LocalBusiness) for schema classification
+- [02-01]: as unknown as WithContext<T> casting for schema-dts strict union types on nested objects
+- [02-01]: BUSINESS constant in business.ts is single source of truth — never hardcode in generators
 - [02-02]: Native MetadataRoute.Sitemap/Robots used — no next-sitemap package (redundant for App Router)
 - [02-02]: opengraph-image.png placed in app/ not public/ — Next.js auto-detection requires app/ placement
 - [02-02]: generatePageMetadata() takes relative path; metadataBase in layout.tsx resolves to full URL
