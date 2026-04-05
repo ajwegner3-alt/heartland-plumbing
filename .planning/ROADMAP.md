@@ -32,12 +32,12 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. A sticky "Call Now" bar is visible at the bottom of the screen on mobile and hidden on desktop
   4. Bitter and Nunito Sans render correctly via next/font with no render-blocking requests visible in DevTools
   5. All URLs follow the lowercase hyphen-separated pattern (no trailing slashes, no uppercase)
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
-- [ ] 01-01: Initialize Next.js 15 project with TypeScript, Tailwind CSS, Sharp, and all required dependencies; configure next.config.ts; push to GitHub and connect to Vercel
-- [ ] 01-02: Build layout shell — root layout.tsx with next/font, Header (Server) + MobileNav (Client), Footer, and mobile sticky CTA bar; brand token configuration in Tailwind
-- [ ] 01-03: Create TypeScript data files (lib/data/services.ts and lib/data/service-areas.ts) with all content, FAQ, metadata, and internal link arrays for all 4 services and 8 areas
+- [ ] 01-01-PLAN.md — Initialize Next.js 15 project with Tailwind v4 brand tokens, next/font, and deploy to Vercel
+- [ ] 01-02-PLAN.md — Build layout shell: sticky Header, MobileNav, Footer, and mobile sticky CTA bar
+- [ ] 01-03-PLAN.md — Create TypeScript data files for services, service areas, and testimonials with full content
 
 ### Phase 2: SEO Infrastructure
 **Goal**: Every page on the site can generate correct, unique SEO metadata, valid JSON-LD schema, and proper canonical/OG tags using centralized TypeScript generators — before any content page is written.
