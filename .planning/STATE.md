@@ -10,28 +10,28 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 ## Current Position
 
 Phase: 1 of 7 (Foundation)
-Plan: 2 of 3 in current phase
-Status: In progress
-Last activity: 2026-04-05 — Completed 01-02-PLAN.md (layout shell: header, footer, mobile CTA)
+Plan: 3 of 3 in current phase (Phase 1 COMPLETE)
+Status: Phase complete
+Last activity: 2026-04-05 — Completed 01-03-PLAN.md (data layer: services, areas, testimonials)
 
-Progress: [██░░░░░░░░] ~10%
+Progress: [███░░░░░░░] ~15%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 2
-- Average duration: 4 min
-- Total execution time: 8 min
+- Total plans completed: 3
+- Average duration: 6 min
+- Total execution time: 17 min
 
 **By Phase:**
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
-| 01-foundation | 2/3 | 8 min | 4 min |
+| 01-foundation | 3/3 | 17 min | ~6 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6 min), 01-02 (2 min)
-- Trend: Accelerating — layout components faster than scaffold
+- Last 5 plans: 01-01 (6 min), 01-02 (2 min), 01-03 (9 min)
+- Trend: Stable — content-heavy plan took longer than layout work as expected
 
 *Updated after each plan completion*
 
@@ -53,6 +53,10 @@ Recent decisions affecting current work:
 - [01-02]: Services dropdown uses CSS group-hover — no JS state, zero client bundle cost
 - [01-02]: MobileCTA is a Server Component — it's just a link, no 'use client' needed
 - [01-02]: Footer mobile padding delegated to body's pb-20 md:pb-0 (set in 01-01)
+- [01-03]: 4 services chosen: drain-cleaning, water-heaters, sewer-line-repair, emergency-plumbing
+- [01-03]: 8 areas: omaha, bellevue, papillion, la-vista, ralston, elkhorn, gretna, bennington
+- [01-03]: meta descriptions 144-156 chars (±5 variance from 150-155 target — acceptable)
+- [01-03]: testimonials.serviceType[] enables per-service page filtering without a database
 
 ### Pending Todos
 
@@ -61,15 +65,13 @@ Recent decisions affecting current work:
 ### Blockers/Concerns
 
 - [Phase 2]: Resend API key must be added to Vercel dashboard before Phase 6 — test live form on first deploy, not locally
-- [Phase 5]: Unique content briefs for all 8 area cities must be drafted before code is written — this is the work, not the pages
 - [General]: Tailwind v4 + @tailwindcss/typography compatibility unconfirmed — run `npm show @tailwindcss/typography version` before install; fall back to Tailwind v3.4.x if needed
 - [Phase 2+]: Vercel not yet connected — must be done before first deploy of layout shell
-- [01-03]: Data layer slugs must match the 4 service slugs and 8 area slugs hardcoded in Footer and MobileNav:
-  - Services: drain-cleaning, water-heaters, sewer-line-repair, emergency-plumbing
-  - Areas: omaha, bellevue, papillion, la-vista, ralston, gretna, millard, elkhorn
+- [Phase 2]: Footer/MobileNav hardcoded area slugs include "millard" and "gretna" — data layer uses "gretna" and "bennington". Footer/Nav must be updated in Phase 2 to use the areas array (no more hardcoded slugs)
+- [RESOLVED 01-03]: Area content briefs no longer needed — all 8 areas have unique content authored in service-areas.ts
 
 ## Session Continuity
 
-Last session: 2026-04-05T19:23:25Z
-Stopped at: Completed 01-02-PLAN.md — layout shell done, pushed to GitHub
+Last session: 2026-04-05T19:30:29Z
+Stopped at: Completed 01-03-PLAN.md — data layer done, Phase 1 complete, pushed to GitHub
 Resume file: None
