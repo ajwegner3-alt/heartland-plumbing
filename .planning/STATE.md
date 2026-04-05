@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 
 ## Current Position
 
-Phase: 4 of 7 (Service Pages) — In Progress
-Plan: 1 of 2 in current phase (Plan 04-01 COMPLETE)
-Status: In progress — Plan 04-02 remaining
-Last activity: 2026-04-05 — Completed 04-01-PLAN.md (Dynamic service page route with emergency styling, 4 SSG pages)
+Phase: 4 of 7 (Service Pages) — COMPLETE
+Plan: 2 of 2 in current phase (Plan 04-02 COMPLETE)
+Status: Phase 4 complete — Phase 5 (Service Areas) next
+Last activity: 2026-04-05 — Completed 04-02-PLAN.md (Verified FAQ accordion, schemas, cross-links — all built by 04-01)
 
-Progress: [████████░░] ~53%
+Progress: [█████████░] ~60%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 7
+- Total plans completed: 8
 - Average duration: ~4 min
-- Total execution time: ~28 min
+- Total execution time: ~31 min
 
 **By Phase:**
 
@@ -30,11 +30,11 @@ Progress: [████████░░] ~53%
 | 01-foundation | 3/3 | 17 min | ~6 min |
 | 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
 | 03-homepage | 2/2 | ~7 min | ~3.5 min |
-| 04-service-pages | 1/2 | ~4 min | ~4 min |
+| 04-service-pages | 2/2 | ~7 min | ~3.5 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-01 (~2 min), 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min)
-- Trend: Fast execution — build verification as primary gate
+- Last 5 plans: 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min), 04-01 (4 min), 04-02 (3 min)
+- Trend: Fast execution — Wave 1 plans often pre-build Wave 2 scope
 
 *Updated after each plan completion*
 
@@ -82,6 +82,8 @@ Recent decisions affecting current work:
 - [04-01]: /services index created as Rule 2 fix — breadcrumb schema + nav both reference /services URL, would 404 without it
 - [04-01]: Sticky sidebar on description section (lg:sticky lg:top-6) for pricing callout + CTA visible while reading paragraphs
 - [04-01]: CSS FAQ accordion: <details>/<summary> with group-open:rotate-45 on + icon — zero JS, no hydration cost
+- [04-02]: Wave 2 plan was verification-only — 04-01 pre-built entire 04-02 scope in a single execution
+- [04-02]: Three JSON-LD schemas per service page render at JSX root (before banner) — crawler-visible immediately
 
 ### Pending Todos
 
@@ -97,6 +99,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T23:51:48Z
-Stopped at: Phase 4 Plan 01 complete. All 4 service pages pre-rendered. Emergency page has red styling + giant phone CTA. /services index created.
+Last session: 2026-04-05T23:57:30Z
+Stopped at: Phase 4 complete. Plans 04-01 and 04-02 done. All 4 service pages have FAQ, schemas, cross-links. /services index created. Phase 5 (service areas) next.
 Resume file: None
