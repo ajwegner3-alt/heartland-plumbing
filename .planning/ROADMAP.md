@@ -64,7 +64,7 @@ Plans:
   3. A trust signals section shows "25+ Years", "312 Reviews", "4.9 Stars", "Licensed & Insured" adjacent to a CTA
   4. A testimonials section displays at least three customer quotes with first name and city
   5. The footer is present with service area links, hours, address, phone, and social links
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 03-01: Build homepage hero section adapted from existing HTML prototype — port teal/copper design to Next.js components with correct next/image priority prop, trust microbar, and primary CTA
