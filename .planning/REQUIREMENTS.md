@@ -147,13 +147,81 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| (populated by roadmapper) | | |
+| PERF-01 | Phase 1 | Pending |
+| PERF-02 | Phase 1 | Pending |
+| PERF-03 | Phase 1 | Pending |
+| PERF-04 | Phase 1 | Pending |
+| PERF-05 | Phase 1 | Pending |
+| PERF-06 | Phase 7 | Pending |
+| PERF-07 | Phase 7 | Pending |
+| PERF-08 | Phase 7 | Pending |
+| PERF-09 | Phase 7 | Pending |
+| PERF-10 | Phase 7 | Pending |
+| SEO-01 | Phase 2 | Pending |
+| SEO-02 | Phase 2 | Pending |
+| SEO-03 | Phase 2 | Pending |
+| SEO-04 | Phase 2 | Pending |
+| SEO-05 | Phase 2 | Pending |
+| SEO-06 | Phase 2 | Pending |
+| SEO-07 | Phase 2 | Pending |
+| SEO-08 | Phase 2 | Pending |
+| SEO-09 | Phase 2 | Pending |
+| SEO-10 | Phase 2 | Pending |
+| SEO-11 | Phase 2 | Pending |
+| SEO-12 | Phase 2 | Pending |
+| SEO-13 | Phase 2 | Pending |
+| SEO-14 | Phase 2 | Pending |
+| SEO-15 | Phase 2 | Pending |
+| SEO-16 | Phase 2 | Pending |
+| SEO-17 | Phase 2 | Pending |
+| SEO-18 | Phase 1 | Pending |
+| CONV-01 | Phase 1 | Pending |
+| CONV-02 | Phase 1 | Pending |
+| CONV-03 | Phase 3 | Pending |
+| CONV-04 | Phase 6 | Pending |
+| CONV-05 | Phase 6 | Pending |
+| CONV-06 | Phase 3 | Pending |
+| CONV-07 | Phase 3 | Pending |
+| CONV-08 | Phase 4 | Pending |
+| CONV-09 | Phase 4 | Pending |
+| HOME-01 | Phase 3 | Pending |
+| HOME-02 | Phase 3 | Pending |
+| HOME-03 | Phase 3 | Pending |
+| HOME-04 | Phase 3 | Pending |
+| HOME-05 | Phase 3 | Pending |
+| HOME-06 | Phase 3 | Pending |
+| SERV-01 | Phase 4 | Pending |
+| SERV-02 | Phase 4 | Pending |
+| SERV-03 | Phase 4 | Pending |
+| SERV-04 | Phase 4 | Pending |
+| SERV-05 | Phase 4 | Pending |
+| SERV-06 | Phase 4 | Pending |
+| AREA-01 | Phase 5 | Pending |
+| AREA-02 | Phase 5 | Pending |
+| AREA-03 | Phase 5 | Pending |
+| AREA-04 | Phase 5 | Pending |
+| AREA-05 | Phase 5 | Pending |
+| AREA-06 | Phase 5 | Pending |
+| AREA-07 | Phase 5 | Pending |
+| AREA-08 | Phase 5 | Pending |
+| AREA-09 | Phase 5 | Pending |
+| AREA-10 | Phase 5 | Pending |
+| ABOUT-01 | Phase 6 | Pending |
+| ABOUT-02 | Phase 6 | Pending |
+| CONTACT-01 | Phase 6 | Pending |
+| CONTACT-02 | Phase 6 | Pending |
+| NAV-01 | Phase 1 | Pending |
+| NAV-02 | Phase 1 | Pending |
+| NAV-03 | Phase 1 | Pending |
+| NAV-04 | Phase 3 | Pending |
+| NAV-05 | Phase 1 | Pending |
+| NAV-06 | Phase 1 | Pending |
 
 **Coverage:**
 - v1 requirements: 55 total
-- Mapped to phases: 0
-- Unmapped: 55
+- Mapped to phases: 55
+- Unmapped: 0
 
 ---
 *Requirements defined: 2025-04-05*
-*Last updated: 2025-04-05 after initial definition*
+*Last updated: 2026-04-05 — Traceability populated by roadmapper*
