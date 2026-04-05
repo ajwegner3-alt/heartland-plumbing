@@ -1,14 +1,575 @@
-export default function Home() {
+import type { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { JsonLd } from '@/components/JsonLd'
+import { generateLocalBusinessSchema } from '@/lib/schema/local-business'
+import { generateAggregateRatingSchema } from '@/lib/schema/aggregate-rating'
+import { BUSINESS } from '@/lib/data/business'
+import { services } from '@/lib/data/services'
+import { testimonials } from '@/lib/data/testimonials'
+import { areas } from '@/lib/data/service-areas'
+
+export const metadata: Metadata = {
+  title: 'Plumber in Omaha, NE',
+  description:
+    'Licensed Omaha plumber since 1998. 4.9-star rating, 312 reviews. Same-day service, 24/7 emergency calls. Free estimates — call (402) 555-0147.',
+  alternates: { canonical: '/' },
+}
+
+// Star rating helper — server-rendered SVG stars
+function StarRating({ rating, size = 14 }: { rating: number; size?: number }) {
   return (
-    <section className="min-h-[60vh] flex items-center justify-center bg-off-white">
-      <div className="text-center px-6">
-        <p className="font-display font-bold text-2xl text-text-primary mb-2">
-          Layout Shell Complete
-        </p>
-        <p className="font-body text-text-muted">
-          Homepage — Coming in Phase 3
-        </p>
-      </div>
-    </section>
+    <div className="flex gap-0.5" aria-label={`${rating} out of 5 stars`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <svg
+          key={i}
+          width={size}
+          height={size}
+          viewBox="0 0 24 24"
+          fill={i < rating ? 'currentColor' : 'none'}
+          stroke="currentColor"
+          strokeWidth="1.5"
+          className={i < rating ? 'text-gold' : 'text-white/30'}
+          aria-hidden="true"
+        >
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+        </svg>
+      ))}
+    </div>
+  )
+}
+
+// Service icon map — inline SVG paths matched to each service
+const SERVICE_ICONS: Record<string, React.ReactNode> = {
+  'drain-cleaning': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+      <path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" />
+    </svg>
+  ),
+  'water-heaters': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+      <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z" />
+    </svg>
+  ),
+  'sewer-line-repair': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+      <polyline points="9 22 9 12 15 12 15 22" />
+    </svg>
+  ),
+  'emergency-plumbing': (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
+    </svg>
+  ),
+}
+
+const yearsInBusiness = new Date().getFullYear() - BUSINESS.yearsFounded
+
+// Select 3 representative testimonials
+const featuredTestimonials = [
+  testimonials.find((t) => t.name === 'Mike R.'),
+  testimonials.find((t) => t.name === 'Sarah T.'),
+  testimonials.find((t) => t.name === 'Linda P.'),
+].filter(Boolean) as typeof testimonials
+
+export default function HomePage() {
+  const lbSchema = generateLocalBusinessSchema()
+  const arSchema = generateAggregateRatingSchema()
+
+  return (
+    <>
+      <JsonLd data={lbSchema} />
+      <JsonLd data={arSchema} />
+
+      {/* ─── HERO SECTION ─────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden flex items-center bg-dark"
+        style={{ minHeight: '95vh', paddingTop: '90px', paddingBottom: '190px' }}
+        aria-label="Hero"
+      >
+        {/* Background image — LCP element, priority load */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1920&q=80"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center"
+            aria-hidden="true"
+          />
+        </div>
+
+        {/* Dark gradient overlay — heavier on left for text legibility */}
+        <div
+          className="absolute inset-0 z-[1]"
+          style={{
+            background:
+              'linear-gradient(to right, rgba(26,31,30,0.88) 0%, rgba(26,31,30,0.72) 40%, rgba(26,31,30,0.52) 70%, rgba(26,31,30,0.38) 100%)',
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Wave divider — fill matches Services section (white) */}
+        <div
+          className="absolute bottom-[-2px] left-0 w-full z-[3] leading-none pointer-events-none"
+          aria-hidden="true"
+        >
+          <svg
+            viewBox="0 0 1440 80"
+            preserveAspectRatio="none"
+            className="block w-full"
+            style={{ height: '80px' }}
+          >
+            <path
+              d="M0,40 C120,70 240,80 360,60 C480,40 540,10 720,20 C900,30 960,70 1080,65 C1200,60 1320,30 1440,45 L1440,80 L0,80 Z"
+              fill="#ffffff"
+            />
+          </svg>
+        </div>
+
+        {/* Content grid */}
+        <div className="relative z-[4] max-w-[1320px] mx-auto px-9 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 items-center">
+
+            {/* ── LEFT COLUMN: headline + CTA + proof ── */}
+            <div className="flex flex-col gap-7">
+
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 self-start">
+                <span
+                  className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-primary-light font-semibold text-sm px-4 py-1.5 rounded-full"
+                >
+                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                  </svg>
+                  Omaha&apos;s Trusted Plumbing Experts
+                </span>
+              </div>
+
+              {/* H1 */}
+              <h1 className="font-display font-black text-white text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight">
+                Expert Plumbing Services<br />
+                <span className="text-primary-light">in Omaha, NE</span>
+              </h1>
+
+              {/* Subheadline */}
+              <p className="font-body text-white/80 text-lg leading-relaxed max-w-[480px]">
+                Licensed since {BUSINESS.yearsFounded}. Same-day service, 24/7 emergency dispatch, and honest estimates before we start any work. Proudly serving Omaha and the surrounding metro.
+              </p>
+
+              {/* Dual CTA buttons */}
+              <div className="flex flex-wrap gap-4">
+                <a
+                  href={BUSINESS.phoneHref}
+                  className="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-bold text-base px-7 py-4 rounded-sm transition-colors min-h-[52px]"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0" aria-hidden="true">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                  Call {BUSINESS.phone}
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 border-2 border-white/60 hover:border-white text-white font-bold text-base px-7 py-4 rounded-sm transition-colors min-h-[52px] hover:bg-white/10"
+                >
+                  Get Free Estimate
+                </Link>
+              </div>
+
+              {/* Trust signals row */}
+              <div className="flex items-center gap-5 flex-wrap">
+                {/* Google rating */}
+                <div className="flex items-center gap-2">
+                  <StarRating rating={5} size={15} />
+                  <span className="text-white/75 text-sm font-semibold">
+                    {BUSINESS.rating.value} Google Rating
+                  </span>
+                </div>
+                <span className="text-white/20 text-sm hidden sm:block" aria-hidden="true">|</span>
+                {/* Licensed & Insured */}
+                <div className="flex items-center gap-1.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary-light shrink-0" aria-hidden="true">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  <span className="text-white/75 text-sm font-semibold">Licensed &amp; Insured</span>
+                </div>
+                <span className="text-white/20 text-sm hidden sm:block" aria-hidden="true">|</span>
+                {/* BBB */}
+                <div className="flex items-center gap-1.5">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary-light shrink-0" aria-hidden="true">
+                    <circle cx="12" cy="8" r="6" />
+                    <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11" />
+                  </svg>
+                  <span className="text-white/75 text-sm font-semibold">BBB A+ Rated</span>
+                </div>
+              </div>
+
+              {/* Proof stats bar — inside hero, adjacent to CTA */}
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 pt-7 border-t border-white/10 mt-1">
+                <div>
+                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
+                    {yearsInBusiness}+
+                  </div>
+                  <div className="text-white/70 text-sm font-semibold">Years in Business</div>
+                </div>
+                <div>
+                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
+                    {BUSINESS.rating.count}
+                  </div>
+                  <div className="text-white/70 text-sm font-semibold">Google Reviews</div>
+                </div>
+                <div>
+                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
+                    {BUSINESS.rating.value}
+                  </div>
+                  <div className="text-white/70 text-sm font-semibold">Star Rating</div>
+                </div>
+                <div>
+                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
+                    A+
+                  </div>
+                  <div className="text-white/70 text-sm font-semibold">BBB Rating</div>
+                </div>
+              </div>
+            </div>
+
+            {/* ── RIGHT COLUMN: lead capture form card ── */}
+            <div className="w-full">
+              <div
+                className="bg-white rounded-lg p-8"
+                style={{ boxShadow: '0 20px 60px rgba(0,0,0,0.3)' }}
+              >
+                {/* Card header */}
+                <h2 className="font-display font-bold text-text-primary text-2xl mb-1">
+                  Request a Free Estimate
+                </h2>
+                <p className="text-text-muted text-sm mb-6">
+                  Tell us about your project — we&apos;ll respond within the hour.
+                </p>
+
+                {/* Form — TODO: Wire form submission in Phase 6 */}
+                <form action="/contact" method="GET" className="flex flex-col gap-4" aria-label="Free estimate request">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="hero-first-name" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                        First Name
+                      </label>
+                      <input
+                        id="hero-first-name"
+                        name="firstName"
+                        type="text"
+                        placeholder="John"
+                        className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="hero-last-name" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                        Last Name
+                      </label>
+                      <input
+                        id="hero-last-name"
+                        name="lastName"
+                        type="text"
+                        placeholder="Smith"
+                        className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors"
+                      />
+                    </div>
+                  </div>
+
+                  <div>
+                    <label htmlFor="hero-phone" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                      Phone <span className="text-copper font-bold">*</span>
+                    </label>
+                    <input
+                      id="hero-phone"
+                      name="phone"
+                      type="tel"
+                      required
+                      placeholder="(402) 555-0000"
+                      className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="hero-email" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                      Email <span className="text-text-muted font-normal text-xs">(optional)</span>
+                    </label>
+                    <input
+                      id="hero-email"
+                      name="email"
+                      type="email"
+                      placeholder="john@example.com"
+                      className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="hero-service" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                      Service Needed
+                    </label>
+                    <select
+                      id="hero-service"
+                      name="service"
+                      className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body bg-white focus:outline-none focus:border-primary transition-colors"
+                    >
+                      <option value="">Select a service...</option>
+                      {services.map((s) => (
+                        <option key={s.slug} value={s.slug}>
+                          {s.title}
+                        </option>
+                      ))}
+                      <option value="other">Other / Not Sure</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="hero-message" className="block text-sm font-semibold text-text-secondary mb-1.5">
+                      Brief Description
+                    </label>
+                    <textarea
+                      id="hero-message"
+                      name="message"
+                      rows={3}
+                      placeholder="What's happening? Any details help us prepare..."
+                      className="w-full border border-border rounded-sm px-3.5 py-2.5 text-sm text-text-primary font-body placeholder:text-text-muted/60 focus:outline-none focus:border-primary transition-colors resize-none"
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="w-full bg-copper hover:bg-copper-dark text-white font-bold text-base py-3.5 rounded-sm transition-colors mt-1"
+                  >
+                    Get Your Free Estimate
+                  </button>
+                </form>
+
+                {/* Trust micro-copy */}
+                <div className="flex items-center justify-center gap-5 mt-5 pt-5 border-t border-border">
+                  <div className="flex items-center gap-1.5 text-text-muted text-xs font-semibold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-green" aria-hidden="true">
+                      <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                    Your info is safe
+                  </div>
+                  <div className="flex items-center gap-1.5 text-text-muted text-xs font-semibold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-green" aria-hidden="true">
+                      <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    Response in &lt; 1 hour
+                  </div>
+                  <div className="flex items-center gap-1.5 text-text-muted text-xs font-semibold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 text-green" aria-hidden="true">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                    100% Free
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICES GRID — Plan 03-02 ───────────────────────────────── */}
+      <section className="py-20 bg-white" aria-label="Our Services">
+        <div className="max-w-[1320px] mx-auto px-9">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-black text-text-primary text-4xl mb-3">
+              Plumbing Services in Omaha &amp; Surrounding Metro
+            </h2>
+            <p className="font-body text-text-secondary text-lg max-w-2xl mx-auto">
+              From routine drain maintenance to emergency burst pipes — licensed, insured, and ready same day.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {services.map((service) => (
+              <Link
+                key={service.slug}
+                href={`/services/${service.slug}`}
+                className="group flex flex-col gap-4 bg-white border border-border rounded-lg p-8 hover:border-primary hover:shadow-card transition-all"
+              >
+                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                  {SERVICE_ICONS[service.slug]}
+                </div>
+                <div>
+                  <h3 className="font-display font-bold text-text-primary text-xl mb-2 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="font-body text-text-secondary text-sm leading-relaxed line-clamp-3">
+                    {service.shortDescription}
+                  </p>
+                </div>
+                <div className="flex items-center gap-1.5 text-primary font-bold text-sm mt-auto">
+                  Learn More
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                    <polyline points="9 18 15 12 9 6" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TRUST SIGNALS SECTION — Plan 03-02 ──────────────────────── */}
+      <section className="py-20 bg-off-white" aria-label="Why Heartland Plumbing">
+        <div className="max-w-[1320px] mx-auto px-9">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-black text-text-primary text-4xl mb-3">
+              Why Omaha Homeowners Choose Heartland
+            </h2>
+            <p className="font-body text-text-secondary text-lg max-w-xl mx-auto">
+              We built our reputation one honest service call at a time — since 1998.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Card 1: Years */}
+            <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
+              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary mx-auto mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
+                </svg>
+              </div>
+              <div className="font-display font-black text-4xl text-text-primary mb-1">{yearsInBusiness}+</div>
+              <div className="font-display font-bold text-text-secondary text-base">Years Serving Omaha</div>
+              <p className="text-text-muted text-sm mt-2">Family-owned since 1998</p>
+            </div>
+            {/* Card 2: Reviews */}
+            <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
+              <div className="w-14 h-14 bg-gold/10 rounded-lg flex items-center justify-center text-gold mx-auto mb-4">
+                <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7" aria-hidden="true">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+              </div>
+              <div className="font-display font-black text-4xl text-text-primary mb-1">{BUSINESS.rating.value}★</div>
+              <div className="font-display font-bold text-text-secondary text-base">{BUSINESS.rating.count} Google Reviews</div>
+              <p className="text-text-muted text-sm mt-2">Verified customer reviews</p>
+            </div>
+            {/* Card 3: Response */}
+            <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
+              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary mx-auto mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+              </div>
+              <div className="font-display font-black text-4xl text-text-primary mb-1">90 min</div>
+              <div className="font-display font-bold text-text-secondary text-base">Emergency Response</div>
+              <p className="text-text-muted text-sm mt-2">24/7 dispatch, all metro areas</p>
+            </div>
+            {/* Card 4: License */}
+            <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
+              <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary mx-auto mb-4">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-7 h-7" aria-hidden="true">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                </svg>
+              </div>
+              <div className="font-display font-black text-3xl text-text-primary mb-1">#{BUSINESS.license}</div>
+              <div className="font-display font-bold text-text-secondary text-base">Licensed &amp; Insured</div>
+              <p className="text-text-muted text-sm mt-2">BBB A+ · Fully bonded</p>
+            </div>
+          </div>
+
+          {/* CTA adjacent to trust cards — conversion principle */}
+          <div className="text-center mt-12">
+            <a
+              href={BUSINESS.phoneHref}
+              className="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-bold text-base px-8 py-4 rounded-sm transition-colors min-h-[52px]"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 shrink-0" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              Call for a Free Estimate — {BUSINESS.phone}
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── TESTIMONIALS SECTION — Plan 03-02 ───────────────────────── */}
+      <section className="py-20 bg-white" aria-label="Customer Testimonials">
+        <div className="max-w-[1320px] mx-auto px-9">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-black text-text-primary text-4xl mb-3">
+              What Omaha Homeowners Say
+            </h2>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <StarRating rating={5} size={18} />
+              <span className="font-semibold text-text-secondary text-base">
+                {BUSINESS.rating.value} out of 5 · {BUSINESS.rating.count} reviews
+              </span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {featuredTestimonials.map((t) => (
+              <div
+                key={t.name}
+                className="bg-off-white border border-border rounded-lg p-7 flex flex-col gap-4"
+              >
+                <div className="flex items-center gap-1">
+                  <StarRating rating={t.rating} size={16} />
+                </div>
+                <blockquote className="font-body text-text-secondary text-[15px] leading-relaxed flex-1">
+                  &ldquo;{t.text}&rdquo;
+                </blockquote>
+                <footer className="flex items-center gap-3 pt-4 border-t border-border">
+                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-display font-bold text-base shrink-0">
+                    {t.name.charAt(0)}
+                  </div>
+                  <div>
+                    <div className="font-semibold text-text-primary text-sm">{t.name}</div>
+                    <div className="text-text-muted text-xs">{t.city}, NE</div>
+                  </div>
+                </footer>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── SERVICE AREAS SECTION — Plan 03-02 ──────────────────────── */}
+      <section className="py-20 bg-dark" aria-label="Service Areas">
+        <div className="max-w-[1320px] mx-auto px-9">
+          <div className="text-center mb-12">
+            <h2 className="font-display font-black text-white text-4xl mb-3">
+              Serving Omaha &amp; the Surrounding Metro
+            </h2>
+            <p className="font-body text-white/70 text-lg max-w-xl mx-auto">
+              Licensed plumber available same day across Douglas, Sarpy, and Washington counties.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {areas.map((area) => (
+              <Link
+                key={area.slug}
+                href={`/service-areas/${area.slug}`}
+                className="group flex items-center gap-3 bg-dark-mid border border-white/10 hover:border-primary-light rounded-lg px-5 py-4 transition-colors"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary-light shrink-0" aria-hidden="true">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span className="font-semibold text-white/80 group-hover:text-white text-sm transition-colors">
+                  {area.city}
+                </span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/service-areas"
+              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white/80 hover:text-white font-semibold text-sm px-6 py-3 rounded-sm transition-colors"
+            >
+              View All Service Areas
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   )
 }
