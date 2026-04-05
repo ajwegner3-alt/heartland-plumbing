@@ -79,11 +79,11 @@ Plans:
   2. Each service page has an FAQ accordion with at least three questions, and clicking a question expands the answer with zero JavaScript loaded for the toggle
   3. The Emergency Plumbing page shows "Call Now" as the primary CTA with the 24/7 emergency phone number prominently displayed
   4. Each service page contains links to related services and to the service area pages
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Build services/[slug]/page.tsx dynamic route with generateStaticParams and generateMetadata; create ServicePage layout component with content, trust bar, and CTA sections
-- [ ] 04-02: Build FaqAccordion.tsx as a CSS-only Client Component using details/summary; wire FAQPage schema and Service schema per page; verify all four pages cross-link correctly
+- [ ] 04-01-PLAN.md — Build services/[slug]/page.tsx dynamic route with generateStaticParams, generateMetadata, content sections, and emergency page red/urgent styling
+- [ ] 04-02-PLAN.md — Add CSS-only FAQ accordion, wire Service/FAQPage/Breadcrumb schemas, build cross-link sections (related services cards + area pills), create /services index page
 
 ### Phase 5: Service Area Pages
 **Goal**: All eight service area pages exist with genuinely unique local content for each city — not city-name swaps — so each page provides distinct value and avoids thin content penalties.
