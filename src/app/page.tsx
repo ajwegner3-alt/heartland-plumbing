@@ -8,6 +8,7 @@ import { BUSINESS } from '@/lib/data/business'
 import { services } from '@/lib/data/services'
 import { testimonials } from '@/lib/data/testimonials'
 import { areas } from '@/lib/data/service-areas'
+import { ScrollReveal } from '@/components/ScrollReveal'
 
 export const metadata: Metadata = {
   title: 'Plumber in Omaha, NE',
@@ -374,50 +375,53 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─── SERVICES GRID — Plan 03-02 ───────────────────────────────── */}
+      {/* ─── SERVICES GRID ────────────────────────────────────────────── */}
       <section className="py-20 bg-white" aria-label="Our Services">
         <div className="max-w-[1320px] mx-auto px-9">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-black text-text-primary text-4xl mb-3">
-              Plumbing Services in Omaha &amp; Surrounding Metro
-            </h2>
-            <p className="font-body text-text-secondary text-lg max-w-2xl mx-auto">
-              From routine drain maintenance to emergency burst pipes — licensed, insured, and ready same day.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {services.map((service) => (
-              <Link
-                key={service.slug}
-                href={`/services/${service.slug}`}
-                className="group flex flex-col gap-4 bg-white border border-border rounded-lg p-8 hover:border-primary hover:shadow-card transition-all"
-              >
-                <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
-                  {SERVICE_ICONS[service.slug]}
-                </div>
-                <div>
-                  <h3 className="font-display font-bold text-text-primary text-xl mb-2 group-hover:text-primary transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="font-body text-text-secondary text-sm leading-relaxed line-clamp-3">
-                    {service.shortDescription}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5 text-primary font-bold text-sm mt-auto">
-                  Learn More
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
-                    <polyline points="9 18 15 12 9 6" />
-                  </svg>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="font-display font-black text-text-primary text-4xl mb-3">
+                Plumbing Services in Omaha &amp; Surrounding Metro
+              </h2>
+              <p className="font-body text-text-secondary text-lg max-w-2xl mx-auto">
+                From routine drain maintenance to emergency burst pipes — licensed, insured, and ready same day.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {services.map((service) => (
+                <Link
+                  key={service.slug}
+                  href={`/services/${service.slug}`}
+                  className="group flex flex-col gap-4 bg-white border border-border rounded-lg p-8 hover:border-primary hover:shadow-card transition-all"
+                >
+                  <div className="w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                    {SERVICE_ICONS[service.slug]}
+                  </div>
+                  <div>
+                    <h3 className="font-display font-bold text-text-primary text-xl mb-2 group-hover:text-primary transition-colors">
+                      {service.title}
+                    </h3>
+                    <p className="font-body text-text-secondary text-sm leading-relaxed line-clamp-3">
+                      {service.shortDescription}
+                    </p>
+                  </div>
+                  <div className="flex items-center gap-1.5 text-primary font-bold text-sm mt-auto">
+                    Learn More
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6" />
+                    </svg>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ─── TRUST SIGNALS SECTION — Plan 03-02 ──────────────────────── */}
+      {/* ─── TRUST SIGNALS SECTION ───────────────────────────────────── */}
       <section className="py-20 bg-off-white" aria-label="Why Heartland Plumbing">
         <div className="max-w-[1320px] mx-auto px-9">
+          <ScrollReveal>
           <div className="text-center mb-12">
             <h2 className="font-display font-black text-text-primary text-4xl mb-3">
               Why Omaha Homeowners Choose Heartland
@@ -485,89 +489,94 @@ export default function HomePage() {
               Call for a Free Estimate — {BUSINESS.phone}
             </a>
           </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ─── TESTIMONIALS SECTION — Plan 03-02 ───────────────────────── */}
+      {/* ─── TESTIMONIALS SECTION ─────────────────────────────────────── */}
       <section className="py-20 bg-white" aria-label="Customer Testimonials">
         <div className="max-w-[1320px] mx-auto px-9">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-black text-text-primary text-4xl mb-3">
-              What Omaha Homeowners Say
-            </h2>
-            <div className="flex items-center justify-center gap-2 mt-3">
-              <StarRating rating={5} size={18} />
-              <span className="font-semibold text-text-secondary text-base">
-                {BUSINESS.rating.value} out of 5 · {BUSINESS.rating.count} reviews
-              </span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {featuredTestimonials.map((t) => (
-              <div
-                key={t.name}
-                className="bg-off-white border border-border rounded-lg p-7 flex flex-col gap-4"
-              >
-                <div className="flex items-center gap-1">
-                  <StarRating rating={t.rating} size={16} />
-                </div>
-                <blockquote className="font-body text-text-secondary text-[15px] leading-relaxed flex-1">
-                  &ldquo;{t.text}&rdquo;
-                </blockquote>
-                <footer className="flex items-center gap-3 pt-4 border-t border-border">
-                  <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-display font-bold text-base shrink-0">
-                    {t.name.charAt(0)}
-                  </div>
-                  <div>
-                    <div className="font-semibold text-text-primary text-sm">{t.name}</div>
-                    <div className="text-text-muted text-xs">{t.city}, NE</div>
-                  </div>
-                </footer>
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="font-display font-black text-text-primary text-4xl mb-3">
+                What Omaha Homeowners Say
+              </h2>
+              <div className="flex items-center justify-center gap-2 mt-3">
+                <StarRating rating={5} size={18} />
+                <span className="font-semibold text-text-secondary text-base">
+                  {BUSINESS.rating.value} out of 5 · {BUSINESS.rating.count} reviews
+                </span>
               </div>
-            ))}
-          </div>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {featuredTestimonials.map((t) => (
+                <div
+                  key={t.name}
+                  className="bg-off-white border border-border rounded-lg p-7 flex flex-col gap-4"
+                >
+                  <div className="flex items-center gap-1">
+                    <StarRating rating={t.rating} size={16} />
+                  </div>
+                  <blockquote className="font-body text-text-secondary text-[15px] leading-relaxed flex-1">
+                    &ldquo;{t.text}&rdquo;
+                  </blockquote>
+                  <footer className="flex items-center gap-3 pt-4 border-t border-border">
+                    <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary font-display font-bold text-base shrink-0">
+                      {t.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-semibold text-text-primary text-sm">{t.name}</div>
+                      <div className="text-text-muted text-xs">{t.city}, NE</div>
+                    </div>
+                  </footer>
+                </div>
+              ))}
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ─── SERVICE AREAS SECTION — Plan 03-02 ──────────────────────── */}
+      {/* ─── SERVICE AREAS SECTION ───────────────────────────────────── */}
       <section className="py-20 bg-dark" aria-label="Service Areas">
         <div className="max-w-[1320px] mx-auto px-9">
-          <div className="text-center mb-12">
-            <h2 className="font-display font-black text-white text-4xl mb-3">
-              Serving Omaha &amp; the Surrounding Metro
-            </h2>
-            <p className="font-body text-white/70 text-lg max-w-xl mx-auto">
-              Licensed plumber available same day across Douglas, Sarpy, and Washington counties.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {areas.map((area) => (
+          <ScrollReveal>
+            <div className="text-center mb-12">
+              <h2 className="font-display font-black text-white text-4xl mb-3">
+                Serving Omaha &amp; the Surrounding Metro
+              </h2>
+              <p className="font-body text-white/70 text-lg max-w-xl mx-auto">
+                Licensed plumber available same day across Douglas, Sarpy, and Washington counties.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {areas.map((area) => (
+                <Link
+                  key={area.slug}
+                  href={`/service-areas/${area.slug}`}
+                  className="group flex items-center gap-3 bg-dark-mid border border-white/10 hover:border-primary-light rounded-lg px-5 py-4 transition-colors"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary-light shrink-0" aria-hidden="true">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                  <span className="font-semibold text-white/80 group-hover:text-white text-sm transition-colors">
+                    {area.city}
+                  </span>
+                </Link>
+              ))}
+            </div>
+            <div className="text-center mt-10">
               <Link
-                key={area.slug}
-                href={`/service-areas/${area.slug}`}
-                className="group flex items-center gap-3 bg-dark-mid border border-white/10 hover:border-primary-light rounded-lg px-5 py-4 transition-colors"
+                href="/service-areas"
+                className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white/80 hover:text-white font-semibold text-sm px-6 py-3 rounded-sm transition-colors"
               >
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-primary-light shrink-0" aria-hidden="true">
-                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                  <circle cx="12" cy="10" r="3" />
+                View All Service Areas
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6" />
                 </svg>
-                <span className="font-semibold text-white/80 group-hover:text-white text-sm transition-colors">
-                  {area.city}
-                </span>
               </Link>
-            ))}
-          </div>
-          <div className="text-center mt-10">
-            <Link
-              href="/service-areas"
-              className="inline-flex items-center gap-2 border border-white/30 hover:border-white text-white/80 hover:text-white font-semibold text-sm px-6 py-3 rounded-sm transition-colors"
-            >
-              View All Service Areas
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4" aria-hidden="true">
-                <polyline points="9 18 15 12 9 6" />
-              </svg>
-            </Link>
-          </div>
+            </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
