@@ -5,23 +5,23 @@
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Every page must load fast, rank well, and convert visitors into phone calls or form submissions.
-**Current focus:** Phase 2 — SEO Infrastructure
+**Current focus:** Phase 3 — Homepage
 
 ## Current Position
 
-Phase: 2 of 7 (SEO Infrastructure)
-Plan: 2 of 2 in current phase (Phase 2 COMPLETE)
-Status: Phase complete
-Last activity: 2026-04-05 — Completed 02-02-PLAN.md (sitemap, robots, OG image, metadata helper)
+Phase: 3 of 7 (Homepage)
+Plan: 1 of 2 in current phase (Plan 03-01 COMPLETE)
+Status: In progress
+Last activity: 2026-04-05 — Completed 03-01-PLAN.md (homepage hero, all sections, ScrollReveal)
 
-Progress: [█████░░░░░] ~30%
+Progress: [██████░░░░] ~40%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 5
-- Average duration: 5 min
-- Total execution time: ~21 min
+- Total plans completed: 6
+- Average duration: ~4 min
+- Total execution time: ~25 min
 
 **By Phase:**
 
@@ -29,10 +29,11 @@ Progress: [█████░░░░░] ~30%
 |-------|-------|-------|----------|
 | 01-foundation | 3/3 | 17 min | ~6 min |
 | 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
+| 03-homepage | 1/2 | 4 min | 4 min |
 
 **Recent Trend:**
-- Last 5 plans: 01-01 (6 min), 01-02 (2 min), 01-03 (9 min), 02-01 (~2 min), 02-02 (~2 min)
-- Trend: SEO infrastructure plans fast — mostly file creation with build verification
+- Last 5 plans: 01-03 (9 min), 02-01 (~2 min), 02-02 (~2 min), 03-01 (4 min)
+- Trend: Fast execution — build verification as primary gate
 
 *Updated after each plan completion*
 
@@ -66,6 +67,13 @@ Recent decisions affecting current work:
 - [02-02]: opengraph-image.png placed in app/ not public/ — Next.js auto-detection requires app/ placement
 - [02-02]: generatePageMetadata() takes relative path; metadataBase in layout.tsx resolves to full URL
 - [02-02]: 'as const' on changeFrequency in .map() callbacks prevents TS literal widening
+- [03-01]: Proof stats bar moves INSIDE hero adjacent to CTA — not a separate section (locked context decision)
+- [03-01]: Wave SVG fill=#ffffff to match white Services section below (not off-white from HTML prototype)
+- [03-01]: metadata.title = 'Plumber in Omaha, NE' only — template appends company name; full string causes duplication
+- [03-01]: yearsInBusiness computed dynamically from current year — stat auto-updates annually
+- [03-01]: All 4 homepage sections fully built in Plan 01 (not deferred to Plan 02)
+- [03-01]: Service icon map: Record<slug, ReactNode> pattern for icon-to-service association
+- [03-01]: StarRating as server-rendered SVG function — zero client JS cost
 
 ### Pending Todos
 
@@ -81,6 +89,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T22:00:41Z
-Stopped at: Phase 2 complete. Both plans (02-01 schema generators, 02-02 sitemap/robots/OG/metadata) finished.
+Last session: 2026-04-05T23:12:20Z
+Stopped at: Phase 3 Plan 01 complete. Homepage fully built (hero, services, trust, testimonials, areas). ScrollReveal created.
 Resume file: None
