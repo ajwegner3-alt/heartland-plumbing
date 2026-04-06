@@ -9,19 +9,19 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 
 ## Current Position
 
-Phase: 5 of 7 (Service Area Pages) — COMPLETE
-Plan: 2 of 2 in current phase (Plan 05-02 COMPLETE)
-Status: Phase 5 complete — Phase 6 (Contact Form) next
-Last activity: 2026-04-06 — Completed 05-02-PLAN.md (verification — all 9 routes, schema, cross-links confirmed)
+Phase: 6 of 7 (About and Contact) — In progress
+Plan: 1 of 2 in current phase (Plan 06-01 COMPLETE)
+Status: In progress — Plan 06-02 (contact form, route handler) next
+Last activity: 2026-04-06 — Completed 06-01-PLAN.md (About page, BUSINESS.email, buildLeadEmail)
 
-Progress: [███████████░] ~72%
+Progress: [████████████░] ~79%
 
 ## Performance Metrics
 
 **Velocity:**
-- Total plans completed: 8
+- Total plans completed: 9
 - Average duration: ~4 min
-- Total execution time: ~31 min
+- Total execution time: ~38 min
 
 **By Phase:**
 
@@ -32,9 +32,10 @@ Progress: [███████████░] ~72%
 | 03-homepage | 2/2 | ~7 min | ~3.5 min |
 | 04-service-pages | 2/2 | ~7 min | ~3.5 min |
 | 05-service-area-pages | 2/2 | ~4 min | ~2 min |
+| 06-about-and-contact | 1/2 | ~7 min | ~7 min |
 
 **Recent Trend:**
-- Last 5 plans: 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min), 04-01 (4 min), 04-02 (3 min)
+- Last 5 plans: 03-02 (3 min), 04-01 (4 min), 04-02 (3 min), 05-01+05-02 (~4 min), 06-01 (~7 min)
 - Trend: Fast execution — Wave 1 plans often pre-build Wave 2 scope
 
 *Updated after each plan completion*
@@ -89,6 +90,11 @@ Recent decisions affecting current work:
 - [05-01]: /services index was also missing from sitemap — added alongside /service-areas as a one-line fix (Rule 2)
 - [05-01]: No FAQ on area pages — AreaData has no faqs field; areaFacts[] used as callout box instead
 - [05-01]: Area page structure: banner → neighborhoods → localContext+facts → services grid → We Also Serve → bottom CTA
+- [06-01]: BUSINESS.email added to both interface and constant — Plan 02 route handler imports from here, never hardcodes
+- [06-01]: buildLeadEmail uses plain HTML string with inline styles — no React Email dependency for single lead notification
+- [06-01]: escapeHtml() wraps ALL user-supplied fields before HTML interpolation — XSS prevention without a library
+- [06-01]: About page is pure Server Component — zero client JS cost, no 'use client'
+- [06-01]: Owner avatar: teal circle with initial "M" — no external image dependency for owner spotlight card
 
 ### Pending Todos
 
@@ -104,6 +110,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-06T00:38:59Z
-Stopped at: Phase 5 COMPLETE. 05-02 verification passed — all 9 routes, schema, cross-links, sitemap confirmed. Phase 6 (Contact Form) next.
+Last session: 2026-04-06T02:18:51Z
+Stopped at: Completed 06-01-PLAN.md — About page live, BUSINESS.email added, buildLeadEmail() ready. Plan 06-02 (contact form + route handler) next.
 Resume file: None
