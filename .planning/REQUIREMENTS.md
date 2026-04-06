@@ -14,11 +14,11 @@ Requirements for initial release. Each maps to roadmap phases.
 - [ ] **PERF-03**: All images served as WebP via Next.js Image component with explicit dimensions
 - [ ] **PERF-04**: Below-fold images lazy loaded; hero image priority loaded
 - [ ] **PERF-05**: Sharp installed for server-side image optimization
-- [ ] **PERF-06**: Lighthouse Performance score 95+ on deployed Vercel URL
-- [ ] **PERF-07**: Lighthouse Accessibility score 95+ on deployed Vercel URL
-- [ ] **PERF-08**: Lighthouse Best Practices score 95+ on deployed Vercel URL
-- [ ] **PERF-09**: Lighthouse SEO score 95+ on deployed Vercel URL
-- [ ] **PERF-10**: LCP under 2.5s, CLS under 0.1, INP under 200ms
+- [x] **PERF-06**: Lighthouse Performance score 95+ on deployed Vercel URL
+- [x] **PERF-07**: Lighthouse Accessibility score 95+ on deployed Vercel URL
+- [x] **PERF-08**: Lighthouse Best Practices score 95+ on deployed Vercel URL
+- [x] **PERF-09**: Lighthouse SEO score 95+ on deployed Vercel URL
+- [x] **PERF-10**: LCP under 2.5s, CLS under 0.1, INP under 200ms
 
 ### SEO
 
@@ -152,11 +152,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | PERF-03 | Phase 1 | Complete |
 | PERF-04 | Phase 1 | Complete |
 | PERF-05 | Phase 1 | Complete |
-| PERF-06 | Phase 7 | Pending |
-| PERF-07 | Phase 7 | Pending |
-| PERF-08 | Phase 7 | Pending |
-| PERF-09 | Phase 7 | Pending |
-| PERF-10 | Phase 7 | Pending |
+| PERF-06 | Phase 7 | Complete |
+| PERF-07 | Phase 7 | Complete |
+| PERF-08 | Phase 7 | Complete |
+| PERF-09 | Phase 7 | Complete |
+| PERF-10 | Phase 7 | Complete |
 | SEO-01 | Phase 2 | Complete |
 | SEO-02 | Phase 2 | Complete |
 | SEO-03 | Phase 2 | Complete |
