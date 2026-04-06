@@ -9,12 +9,12 @@ See: .planning/PROJECT.md (updated 2026-04-05)
 
 ## Current Position
 
-Phase: 4 of 7 (Service Pages) — COMPLETE
-Plan: 2 of 2 in current phase (Plan 04-02 COMPLETE)
-Status: Phase 4 complete — Phase 5 (Service Areas) next
-Last activity: 2026-04-05 — Completed 04-02-PLAN.md (Verified FAQ accordion, schemas, cross-links — all built by 04-01)
+Phase: 5 of 7 (Service Area Pages) — In Progress
+Plan: 1 of 2 in current phase (Plan 05-01 COMPLETE)
+Status: In progress — Plan 05-02 next
+Last activity: 2026-04-06 — Completed 05-01-PLAN.md (8 area pages + index + schema + sitemap)
 
-Progress: [█████████░] ~60%
+Progress: [██████████░] ~65%
 
 ## Performance Metrics
 
@@ -31,6 +31,7 @@ Progress: [█████████░] ~60%
 | 02-seo-infrastructure | 2/2 | ~4 min | ~2 min |
 | 03-homepage | 2/2 | ~7 min | ~3.5 min |
 | 04-service-pages | 2/2 | ~7 min | ~3.5 min |
+| 05-service-area-pages | 1/2 | ~3 min | ~3 min |
 
 **Recent Trend:**
 - Last 5 plans: 02-02 (~2 min), 03-01 (4 min), 03-02 (3 min), 04-01 (4 min), 04-02 (3 min)
@@ -84,6 +85,10 @@ Recent decisions affecting current work:
 - [04-01]: CSS FAQ accordion: <details>/<summary> with group-open:rotate-45 on + icon — zero JS, no hydration cost
 - [04-02]: Wave 2 plan was verification-only — 04-01 pre-built entire 04-02 scope in a single execution
 - [04-02]: Three JSON-LD schemas per service page render at JSX root (before banner) — crawler-visible immediately
+- [05-01]: SERVICE_ICONS map duplicated in area page (same pattern as Phase 4 — no shared file extraction, accepted shortcut)
+- [05-01]: /services index was also missing from sitemap — added alongside /service-areas as a one-line fix (Rule 2)
+- [05-01]: No FAQ on area pages — AreaData has no faqs field; areaFacts[] used as callout box instead
+- [05-01]: Area page structure: banner → neighborhoods → localContext+facts → services grid → We Also Serve → bottom CTA
 
 ### Pending Todos
 
@@ -99,6 +104,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-05T23:57:30Z
-Stopped at: Phase 4 complete. Plans 04-01 and 04-02 done. All 4 service pages have FAQ, schemas, cross-links. /services index created. Phase 5 (service areas) next.
+Last session: 2026-04-06T00:36:31Z
+Stopped at: Phase 5, Plan 05-01 complete. 8 area pages, /service-areas index, city-scoped schema, sitemap updated. Plan 05-02 (verification) next.
 Resume file: None
