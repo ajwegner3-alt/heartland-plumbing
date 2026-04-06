@@ -94,11 +94,11 @@ Plans:
   2. Each area page contains at least one paragraph with city-specific context — local neighborhoods, area characteristics, or area-specific plumbing facts — not shared with any other area page
   3. Each area page links to all four service pages available in that area
   4. No area page shares a title tag, meta description, or H1 with any other page on the site
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 05-01: Write unique content briefs for all 8 service area cities (local context paragraphs, area-specific H1 and FAQ); review for duplicate content before any code is written
-- [ ] 05-02: Build service-areas/[slug]/page.tsx dynamic route with generateStaticParams and generateMetadata; wire LocalBusiness schema, BreadcrumbList, and all cross-links to service pages
+- [ ] 05-01-PLAN.md — Build schema generator, dynamic area page (8 routes), index page, and sitemap update
+- [ ] 05-02-PLAN.md — Verify all routes, content uniqueness, cross-links, and schema markup
 
 ### Phase 6: About and Contact
 **Goal**: A visitor can learn who Heartland Plumbing is and submit a contact form that delivers an email notification — tested live on the deployed Vercel URL, not just locally.
