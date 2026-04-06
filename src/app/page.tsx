@@ -202,10 +202,10 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* BBB Accredited Business seal */}
+                {/* BBB Accredited Business seal — sized to match frosted badge height */}
                 <div className="flex items-center shrink-0">
-                  <svg width="140" height="33" viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" aria-label="BBB Accredited Business A+ Rating">
-                    <rect width="240" height="56" rx="4" fill="#00607B"/>
+                  <svg width="170" height="44" viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" className="rounded-md" aria-label="BBB Accredited Business A+ Rating">
+                    <rect width="240" height="56" rx="6" fill="#00607B"/>
                     <g transform="translate(10,6)">
                       <path d="M12 0C12 0 8 6 8 10c0 2.2 1.8 4 4 4s4-1.8 4-4C16 6 12 0 12 0z" fill="#FFB81C"/>
                       <path d="M12 3C12 3 10 7 10 9.5c0 1.1.9 2 2 2s2-.9 2-2C14 7 12 3 12 3z" fill="#FF6B00"/>
@@ -224,25 +224,21 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Proof stats bar — inside hero, adjacent to CTA */}
-              <div className="grid grid-cols-3 gap-5 pt-7 border-t border-white/10 mt-1">
-                <div>
-                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
-                    {yearsInBusiness}+
-                  </div>
-                  <div className="text-white/70 text-sm font-semibold">Years in Business</div>
+              {/* Proof stats strip — frosted bar matching badge aesthetic */}
+              <div className="flex items-center gap-0 bg-white/[0.06] backdrop-blur-sm border border-white/10 rounded-md overflow-hidden mt-1">
+                <div className="flex-1 flex items-center gap-3 px-5 py-3">
+                  <span className="font-display font-black text-2xl text-primary-light leading-none">{yearsInBusiness}+</span>
+                  <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">Years</span>
                 </div>
-                <div>
-                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
-                    24/7
-                  </div>
-                  <div className="text-white/70 text-sm font-semibold">Always Available</div>
+                <div className="w-px h-8 bg-white/10" aria-hidden="true" />
+                <div className="flex-1 flex items-center gap-3 px-5 py-3">
+                  <span className="font-display font-black text-2xl text-primary-light leading-none">24/7</span>
+                  <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">Available</span>
                 </div>
-                <div>
-                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
-                    Free
-                  </div>
-                  <div className="text-white/70 text-sm font-semibold">Estimates &amp; Quotes</div>
+                <div className="w-px h-8 bg-white/10" aria-hidden="true" />
+                <div className="flex-1 flex items-center gap-3 px-5 py-3">
+                  <span className="font-display font-black text-2xl text-primary-light leading-none">Free</span>
+                  <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">Estimates</span>
                 </div>
               </div>
             </div>
