@@ -224,24 +224,16 @@ export default function HomePage() {
                   <div className="text-white/70 text-sm font-semibold">Years in Business</div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-2 mb-1">
-                    <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="shrink-0" aria-hidden="true">
-                      <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
-                      <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-                      <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-                      <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-                    </svg>
-                    <div className="font-display font-black text-[2.2rem] text-primary-light leading-none">
-                      {BUSINESS.rating.count}+
-                    </div>
-                  </div>
-                  <div className="text-white/70 text-sm font-semibold">Google Reviews</div>
-                </div>
-                <div>
                   <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
                     24/7
                   </div>
-                  <div className="text-white/70 text-sm font-semibold">Emergency Service</div>
+                  <div className="text-white/70 text-sm font-semibold">Always Available</div>
+                </div>
+                <div>
+                  <div className="font-display font-black text-[2.2rem] text-primary-light leading-none mb-1">
+                    Free
+                  </div>
+                  <div className="text-white/70 text-sm font-semibold">Estimates &amp; Quotes</div>
                 </div>
               </div>
             </div>
@@ -453,14 +445,19 @@ export default function HomePage() {
             </div>
             {/* Card 2: Reviews */}
             <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
-              <div className="w-14 h-14 bg-gold/10 rounded-lg flex items-center justify-center text-gold mx-auto mb-4">
-                <svg viewBox="0 0 24 24" fill="currentColor" className="w-7 h-7" aria-hidden="true">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              <div className="w-14 h-14 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg width="36" height="36" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z" fill="#4285F4"/>
+                  <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                  <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                  <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
                 </svg>
               </div>
-              <div className="font-display font-black text-4xl text-text-primary mb-1">{BUSINESS.rating.value}★</div>
-              <div className="font-display font-bold text-text-secondary text-base">{BUSINESS.rating.count} Google Reviews</div>
-              <p className="text-text-muted text-sm mt-2">Verified customer reviews</p>
+              <div className="flex items-center justify-center gap-1.5 mb-1">
+                <span className="font-display font-black text-4xl text-text-primary">{BUSINESS.rating.value}</span>
+                <StarRating rating={5} size={16} />
+              </div>
+              <div className="font-display font-bold text-text-secondary text-base">{BUSINESS.rating.count} Reviews</div>
             </div>
             {/* Card 3: Response */}
             <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
@@ -509,14 +506,11 @@ export default function HomePage() {
           <ScrollReveal>
             <div className="text-center mb-12">
               <h2 className="font-display font-black text-text-primary text-4xl mb-3">
-                What Omaha Homeowners Say
+                What Our Customers Say
               </h2>
-              <div className="flex items-center justify-center gap-2 mt-3">
-                <StarRating rating={5} size={18} />
-                <span className="font-semibold text-text-secondary text-base">
-                  {BUSINESS.rating.value} out of 5 · {BUSINESS.rating.count} reviews
-                </span>
-              </div>
+              <p className="font-body text-text-secondary text-lg max-w-xl mx-auto">
+                Real reviews from homeowners across the Omaha metro.
+              </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {featuredTestimonials.map((t) => (
