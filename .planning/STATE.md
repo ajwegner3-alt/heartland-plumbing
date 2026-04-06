@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Every page must load fast, rank well, and convert visitors into phone calls or form submissions.
-**Current focus:** Phase 4 — Service Pages
+**Current focus:** Phase 6 — About and Contact
 
 ## Current Position
 
-Phase: 6 of 7 (About and Contact) — In progress
-Plan: 1 of 2 in current phase (Plan 06-01 COMPLETE)
-Status: In progress — Plan 06-02 (contact form, route handler) next
-Last activity: 2026-04-06 — Completed 06-01-PLAN.md (About page, BUSINESS.email, buildLeadEmail)
+Phase: 6 of 7 (About and Contact) — Awaiting checkpoint (human-verify)
+Plan: 2 of 2 in current phase (Plan 06-02 Task 1 COMPLETE — checkpoint Task 2 awaiting approval)
+Status: Paused at checkpoint — Andrew must verify /about and /contact locally, then approve
+Last activity: 2026-04-06 — Completed 06-02 Task 1 (ContactForm, route handler, /contact page, Resend, pushed to master)
 
-Progress: [████████████░] ~79%
+Progress: [█████████████░] ~86%
 
 ## Performance Metrics
 
@@ -32,7 +32,7 @@ Progress: [████████████░] ~79%
 | 03-homepage | 2/2 | ~7 min | ~3.5 min |
 | 04-service-pages | 2/2 | ~7 min | ~3.5 min |
 | 05-service-area-pages | 2/2 | ~4 min | ~2 min |
-| 06-about-and-contact | 1/2 | ~7 min | ~7 min |
+| 06-about-and-contact | 2/2 | ~16 min | ~8 min |
 
 **Recent Trend:**
 - Last 5 plans: 03-02 (3 min), 04-01 (4 min), 04-02 (3 min), 05-01+05-02 (~4 min), 06-01 (~7 min)
@@ -95,14 +95,21 @@ Recent decisions affecting current work:
 - [06-01]: escapeHtml() wraps ALL user-supplied fields before HTML interpolation — XSS prevention without a library
 - [06-01]: About page is pure Server Component — zero client JS cost, no 'use client'
 - [06-01]: Owner avatar: teal circle with initial "M" — no external image dependency for owner spotlight card
+- [06-02]: Lazy Resend init inside POST handler body — module-scope constructor throws during build-time page collection when API key missing
+- [06-02]: ContactForm uses hardcoded service option strings — avoids pulling full services data module into client bundle for a select dropdown
+- [06-02]: Honeypot returns 200 { success: true } silently — bots can't detect the protection triggered, reducing adaptive attacks
+- [06-02]: Server-side validation mirrors client-side rules — defense in depth; required even when client validates first
 
 ### Pending Todos
 
 - [ ] Andrew: Connect GitHub repo to Vercel via dashboard (see 01-01-SUMMARY.md User Setup section)
+- [ ] Andrew: Add RESEND_API_KEY to Vercel env vars (Vercel Dashboard → Project → Settings → Environment Variables)
+- [ ] Andrew: Add RESEND_FROM_EMAIL to Vercel env vars (use onboarding@resend.dev initially; update after domain verification)
+- [ ] Andrew: Verify heartlandplumbingomaha.com domain in Resend (Resend Dashboard → Domains → add SPF/DKIM to Namecheap DNS)
 
 ### Blockers/Concerns
 
-- [Phase 2]: Resend API key must be added to Vercel dashboard before Phase 6 — test live form on first deploy, not locally
+- [Phase 6 ACTIVE]: Resend API key must be added to Vercel dashboard before testing live form — /api/contact returns 500 "Email not configured" without it
 - [General]: Tailwind v4 + @tailwindcss/typography compatibility unconfirmed — run `npm show @tailwindcss/typography version` before install; fall back to Tailwind v3.4.x if needed
 - [Phase 2+]: Vercel not yet connected — must be done before first deploy of layout shell
 - [RESOLVED]: Footer Millard→Bennington slug mismatch fixed in orchestrator commit 8f7b31a
@@ -110,6 +117,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-06T02:18:51Z
-Stopped at: Completed 06-01-PLAN.md — About page live, BUSINESS.email added, buildLeadEmail() ready. Plan 06-02 (contact form + route handler) next.
+Last session: 2026-04-06T02:25:30Z
+Stopped at: 06-02 Task 1 complete and pushed. Paused at checkpoint:human-verify (Task 2). Andrew must run `npm run dev`, verify /about and /contact locally, then type "approved" to continue.
 Resume file: None
