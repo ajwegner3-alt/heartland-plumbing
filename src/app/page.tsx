@@ -10,12 +10,21 @@ import { testimonials } from '@/lib/data/testimonials'
 import { areas } from '@/lib/data/service-areas'
 import { ScrollReveal } from '@/components/ScrollReveal'
 
-export const metadata = generatePageMetadata({
-  title: 'Plumber in Omaha, NE',
+// Absolute title bypasses the layout template suffix so we can include service keywords
+// without exceeding the 60-char SEO limit.
+const _homepageMeta = generatePageMetadata({
+  title: 'Plumber in Omaha, NE — Drains, Sewers & Water Heaters',
   description:
     'Licensed Omaha plumber since 1998. 4.9-star rating, 312 reviews. Same-day service, 24/7 emergency calls. Free estimates — call (402) 555-0147.',
   path: '/',
 })
+
+export const metadata = {
+  ..._homepageMeta,
+  title: {
+    absolute: 'Plumber in Omaha, NE — Drains, Sewers & Water Heaters',
+  },
+}
 
 // Star rating helper — server-rendered SVG stars
 function StarRating({ rating, size = 14 }: { rating: number; size?: number }) {
@@ -99,6 +108,7 @@ export default function HomePage() {
             priority
             sizes="100vw"
             className="object-cover object-center"
+            fetchPriority="high"
             aria-hidden="true"
           />
         </div>
