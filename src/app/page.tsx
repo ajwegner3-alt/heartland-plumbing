@@ -202,9 +202,9 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* BBB Accredited Business seal — height matched to frosted badges via self-stretch */}
-                <div className="flex items-stretch shrink-0 self-stretch">
-                  <svg viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" className="rounded-md h-full w-auto" aria-label="BBB Accredited Business A+ Rating">
+                {/* BBB Accredited Business seal — height matches frosted badge row (48px) */}
+                <div className="flex items-center shrink-0">
+                  <svg width="206" height="48" viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" className="rounded-md" aria-label="BBB Accredited Business A+ Rating">
                     <rect width="240" height="56" rx="6" fill="#00607B"/>
                     <g transform="translate(10,6)">
                       <path d="M12 0C12 0 8 6 8 10c0 2.2 1.8 4 4 4s4-1.8 4-4C16 6 12 0 12 0z" fill="#FFB81C"/>
