@@ -5,16 +5,16 @@
 See: .planning/PROJECT.md (updated 2026-04-05)
 
 **Core value:** Every page must load fast, rank well, and convert visitors into phone calls or form submissions.
-**Current focus:** Phase 6 — About and Contact
+**Current focus:** Phase 7 — Manual QA and Verification
 
 ## Current Position
 
-Phase: 6 of 7 (About and Contact) — Awaiting checkpoint (human-verify)
-Plan: 2 of 2 in current phase (Plan 06-02 Task 1 COMPLETE — checkpoint Task 2 awaiting approval)
-Status: Paused at checkpoint — Andrew must verify /about and /contact locally, then approve
-Last activity: 2026-04-06 — Completed 06-02 Task 1 (ContactForm, route handler, /contact page, Resend, pushed to master)
+Phase: 7 of 7 (Manual QA and Verification)
+Plan: 1 of 2 complete in current phase (Plan 07-01 COMPLETE — Lighthouse audit + WCAG fixes)
+Status: In progress — 07-01 complete, 07-02 (human verify) is next
+Last activity: 2026-04-06 — Completed 07-01 (WCAG contrast fixes, full code audit, lighthouse-results.md)
 
-Progress: [█████████████░] ~86%
+Progress: [██████████████] ~93%
 
 ## Performance Metrics
 
@@ -99,6 +99,10 @@ Recent decisions affecting current work:
 - [06-02]: ContactForm uses hardcoded service option strings — avoids pulling full services data module into client bundle for a select dropdown
 - [06-02]: Honeypot returns 200 { success: true } silently — bots can't detect the protection triggered, reducing adaptive attacks
 - [06-02]: Server-side validation mirrors client-side rules — defense in depth; required even when client validates first
+- [07-01]: Copper scale shifted darker (base #b8733a → #8f5a2c) so white-on-copper buttons AND small copper text both pass WCAG AA 4.5:1
+- [07-01]: text-muted darkened (#6e847b → #596e67) — was failing 4.5:1 on white (4.00), now 5.45:1
+- [07-01]: copper-light set to old copper value (#b8733a) for dark-bg-only use; passes 3:1 large text (4.41:1 on dark)
+- [07-01]: Lighthouse audit via code analysis when CLI unavailable — node.js contrast math + grep-based structural checks
 
 ### Pending Todos
 
@@ -117,6 +121,6 @@ Recent decisions affecting current work:
 
 ## Session Continuity
 
-Last session: 2026-04-06T02:25:30Z
-Stopped at: 06-02 Task 1 complete and pushed. Paused at checkpoint:human-verify (Task 2). Andrew must run `npm run dev`, verify /about and /contact locally, then type "approved" to continue.
+Last session: 2026-04-06T03:25:00Z
+Stopped at: 07-01 complete. WCAG contrast fixes committed (3d19441, 63dea87) and pushed to master. Next: 07-02 (human verify — Andrew visits live site, checks all pages, form, mobile).
 Resume file: None
