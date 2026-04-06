@@ -114,7 +114,7 @@ export default function Header() {
               >
                 (402) 555-0147
               </a>
-              <div className="text-text-muted text-[11px] font-medium">Available 24/7</div>
+              <div className="text-red-600 text-[11px] font-bold">Available 24/7</div>
             </div>
             <a
               href="tel:4025550147"

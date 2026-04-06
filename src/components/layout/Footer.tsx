@@ -75,7 +75,7 @@ export default function Footer() {
               </svg>
               (402) 555-0147
             </a>
-            <span className="block text-text-muted text-xs mt-0.5">Available 24/7</span>
+            <span className="block text-red-500 text-xs font-bold mt-0.5">Available 24/7</span>
 
             <p className="text-text-muted text-sm mt-2">
               {BUSINESS.address.street}<br />
@@ -169,8 +169,8 @@ export default function Footer() {
               </li>
             </ul>
 
-            <div className="mt-5 bg-primary/20 border border-primary/30 rounded-md px-4 py-3">
-              <p className="text-primary-light font-bold text-[13px] uppercase tracking-wide mb-0.5">
+            <div className="mt-5 bg-red-900/30 border border-red-700/40 rounded-md px-4 py-3">
+              <p className="text-red-400 font-bold text-[13px] uppercase tracking-wide mb-0.5">
                 24/7 Emergency Service
               </p>
               <p className="text-white/70 text-[13px]">

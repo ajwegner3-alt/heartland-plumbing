@@ -132,7 +132,7 @@ export default async function ServiceAreaPage({ params }: { params: Promise<{ sl
               className="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-bold text-base px-7 py-4 rounded-sm transition-colors min-h-[52px]"
             >
               <PhoneIcon />
-              Call {BUSINESS.phone} <span className="text-white/70 text-sm font-normal">(24/7)</span>
+              Call {BUSINESS.phone} <span className="text-red-300 text-sm font-bold">(24/7)</span>
             </a>
             <Link
               href="/contact"
@@ -299,7 +299,7 @@ export default async function ServiceAreaPage({ params }: { params: Promise<{ sl
                 className="inline-flex items-center gap-2.5 bg-primary hover:bg-primary-dark text-white font-bold text-base px-8 py-4 rounded-sm transition-colors min-h-[52px]"
               >
                 <PhoneIcon />
-                Call {BUSINESS.phone} <span className="text-white/70 text-sm font-normal">(24/7)</span>
+                Call {BUSINESS.phone} <span className="text-red-300 text-sm font-bold">(24/7)</span>
               </a>
               <Link
                 href="/contact"

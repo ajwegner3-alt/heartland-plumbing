@@ -106,7 +106,7 @@ export default function ContactPage() {
                       {BUSINESS.phone}
                     </a>
                     <p className="text-text-muted text-xs mt-1 font-semibold">
-                      24/7 emergency line — always answered
+                      <span className="text-red-600 font-bold">24/7</span> emergency line — always answered
                     </p>
                   </div>
                 </div>

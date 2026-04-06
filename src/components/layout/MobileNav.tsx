@@ -121,7 +121,7 @@ export default function MobileNav() {
               >
                 (402) 555-0147
               </a>
-              <div className="text-text-muted text-xs">Available 24/7</div>
+              <div className="text-red-600 text-xs font-bold">Available 24/7</div>
             </div>
             <a
               href="tel:4025550147"

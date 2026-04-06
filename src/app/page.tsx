@@ -146,7 +146,7 @@ export default function HomePage() {
 
               {/* Subheadline */}
               <p className="font-body text-white/80 text-lg leading-relaxed max-w-[480px]">
-                Licensed since {BUSINESS.yearsFounded}. Same-day service, 24/7 emergency dispatch, and honest estimates before we start any work. Proudly serving Omaha and the surrounding metro.
+                Licensed since {BUSINESS.yearsFounded}. Same-day service, <span className="text-red-300 font-semibold">24/7</span> emergency dispatch, and honest estimates before we start any work. Proudly serving Omaha and the surrounding metro.
               </p>
 
               {/* Dual CTA buttons */}
@@ -159,7 +159,7 @@ export default function HomePage() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   Call {BUSINESS.phone}
-                  <span className="text-white/70 text-sm font-normal">(24/7)</span>
+                  <span className="text-red-300 text-sm font-bold">(24/7)</span>
                 </a>
                 <Link
                   href="/contact"
@@ -232,7 +232,7 @@ export default function HomePage() {
                 </div>
                 <div className="w-px h-8 bg-white/10" aria-hidden="true" />
                 <div className="flex-1 flex items-center gap-3 px-5 py-3">
-                  <span className="font-display font-black text-2xl text-primary-light leading-none">24/7</span>
+                  <span className="font-display font-black text-2xl text-red-400 leading-none">24/7</span>
                   <span className="text-white/60 text-xs font-semibold uppercase tracking-wider">Available</span>
                 </div>
                 <div className="w-px h-8 bg-white/10" aria-hidden="true" />
@@ -473,7 +473,7 @@ export default function HomePage() {
               </div>
               <div className="font-display font-black text-4xl text-text-primary mb-1">90 min</div>
               <div className="font-display font-bold text-text-secondary text-base">Emergency Response</div>
-              <p className="text-text-muted text-sm mt-2">24/7 dispatch, all metro areas</p>
+              <p className="text-sm mt-2"><span className="text-red-600 font-bold">24/7</span> <span className="text-text-muted">dispatch, all metro areas</span></p>
             </div>
             {/* Card 4: License */}
             <div className="bg-white border border-border rounded-lg p-7 text-center shadow-card">
@@ -498,7 +498,7 @@ export default function HomePage() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               Call for a Free Estimate — {BUSINESS.phone}
-              <span className="text-white/70 text-sm font-normal">(24/7)</span>
+              <span className="text-red-300 text-sm font-bold">(24/7)</span>
             </a>
           </div>
           </ScrollReveal>
