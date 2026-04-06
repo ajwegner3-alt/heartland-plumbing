@@ -75,6 +75,7 @@ export default function Footer() {
               </svg>
               (402) 555-0147
             </a>
+            <span className="block text-text-muted text-xs mt-0.5">Available 24/7</span>
 
             <p className="text-text-muted text-sm mt-2">
               {BUSINESS.address.street}<br />

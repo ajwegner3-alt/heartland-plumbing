@@ -107,12 +107,15 @@ export default function Header() {
 
           {/* Header right — phone + CTA, hidden below lg */}
           <div className="hidden lg:flex items-center gap-[16px]">
-            <a
-              href="tel:4025550147"
-              className="text-text-secondary font-semibold text-[14px] hover:text-primary transition-colors"
-            >
-              (402) 555-0147
-            </a>
+            <div className="text-right">
+              <a
+                href="tel:4025550147"
+                className="text-text-secondary font-semibold text-[14px] hover:text-primary transition-colors"
+              >
+                (402) 555-0147
+              </a>
+              <div className="text-text-muted text-[11px] font-medium">Available 24/7</div>
+            </div>
             <a
               href="tel:4025550147"
               className="inline-flex items-center gap-2 bg-copper hover:bg-copper-dark text-white font-bold text-sm px-[22px] py-[10px] rounded-sm transition-colors min-h-[48px]"

@@ -138,18 +138,6 @@ export default function HomePage() {
             {/* ── LEFT COLUMN: headline + CTA + proof ── */}
             <div className="flex flex-col gap-7">
 
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 self-start">
-                <span
-                  className="inline-flex items-center gap-2 bg-primary/20 border border-primary/40 text-primary-light font-semibold text-sm px-4 py-1.5 rounded-full"
-                >
-                  <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5 shrink-0" aria-hidden="true">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-                  </svg>
-                  Omaha&apos;s Trusted Plumbing Experts
-                </span>
-              </div>
-
               {/* H1 */}
               <h1 className="font-display font-black text-white text-5xl lg:text-[3.4rem] leading-[1.08] tracking-tight">
                 Expert Plumbing Services<br />
@@ -171,6 +159,7 @@ export default function HomePage() {
                     <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                   </svg>
                   Call {BUSINESS.phone}
+                  <span className="text-white/70 text-sm font-normal">(24/7)</span>
                 </a>
                 <Link
                   href="/contact"
@@ -507,6 +496,7 @@ export default function HomePage() {
                 <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.65-1.84a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg>
               Call for a Free Estimate — {BUSINESS.phone}
+              <span className="text-white/70 text-sm font-normal">(24/7)</span>
             </a>
           </div>
           </ScrollReveal>

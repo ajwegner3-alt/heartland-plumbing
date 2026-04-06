@@ -185,7 +185,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               className={`inline-flex items-center gap-2.5 ${ctaBg} text-white font-bold text-base px-7 py-4 rounded-sm transition-colors min-h-[52px]`}
             >
               <PhoneIcon />
-              {isEmergency ? 'Call Now — We Answer 24/7' : `Call ${BUSINESS.phone}`}
+              {isEmergency ? 'Call Now — We Answer 24/7' : <>Call {BUSINESS.phone} <span className="text-white/70 text-sm font-normal">(24/7)</span></>}
             </a>
             <Link
               href="/contact"
@@ -325,7 +325,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <p className="text-white/40 text-xs mt-3">
                     {isEmergency
                       ? 'Answered 24/7 · 365 days/year'
-                      : 'Mon–Fri 7am–6pm · Sat 8am–2pm'}
+                      : 'Available 24/7 · Free estimates'}
                   </p>
                 </div>
               </div>
@@ -477,7 +477,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   Ready to Schedule {service.title}?
                 </h2>
                 <p className="font-body text-white/70 text-base mb-8 max-w-xl mx-auto">
-                  Call for a free estimate or send us a message — we respond within the hour during business hours.
+                  Call anytime — we answer 24/7. Or send us a message and we&apos;ll respond within the hour.
                 </p>
                 <div className="flex flex-wrap gap-4 justify-center">
                   <a
@@ -485,7 +485,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                     className={`inline-flex items-center gap-2.5 ${ctaBg} text-white font-bold text-base px-8 py-4 rounded-sm transition-colors min-h-[52px]`}
                   >
                     <PhoneIcon />
-                    Call {BUSINESS.phone}
+                    Call {BUSINESS.phone} <span className="text-white/70 text-sm font-normal">(24/7)</span>
                   </a>
                   <Link
                     href="/contact"

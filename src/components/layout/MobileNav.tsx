@@ -114,12 +114,15 @@ export default function MobileNav() {
 
           {/* Phone CTA in mobile menu */}
           <div className="border-t border-border pt-4 pb-2 flex flex-col gap-3">
-            <a
-              href="tel:4025550147"
-              className="text-text-secondary font-semibold text-sm text-center"
-            >
-              (402) 555-0147
-            </a>
+            <div className="text-center">
+              <a
+                href="tel:4025550147"
+                className="text-text-secondary font-semibold text-sm"
+              >
+                (402) 555-0147
+              </a>
+              <div className="text-text-muted text-xs">Available 24/7</div>
+            </div>
             <a
               href="tel:4025550147"
               className="flex items-center justify-center gap-2 bg-copper hover:bg-copper-dark text-white font-bold text-sm px-6 py-3 rounded-sm transition-colors"
