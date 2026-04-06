@@ -2,7 +2,7 @@
 
 ## Overview
 
-Build a high-performance Next.js portfolio demo for Heartland Plumbing Co. — a fictional Omaha plumber — that demonstrates NSI's capability to deliver sites that load fast, rank well, and convert visitors into calls. Seven phases take the project from scaffolded Next.js skeleton to a verified 15-page live site with Lighthouse 95+ scores confirmed on the deployed Vercel URL.
+Build a high-performance Next.js portfolio demo for Heartland Plumbing Co. — a fictional Omaha plumber — that demonstrates NSI's capability to deliver sites that load fast, rank well, and convert visitors into calls. Seven phases take the project from scaffolded Next.js skeleton to a verified 16-page live site with Lighthouse 95+ scores confirmed on the deployed Vercel URL.
 
 ## Phases
 
@@ -122,14 +122,14 @@ Plans:
 **Success Criteria** (what must be TRUE):
   1. Lighthouse run against the deployed Vercel URL (not localhost) returns 95+ on Performance, Accessibility, Best Practices, and SEO for the homepage
   2. Google Rich Results Test returns passing results for LocalBusiness, Service, FAQPage, BreadcrumbList, and AggregateRating schema types
-  3. All 15 pages are manually visited in a browser and render correctly with no console errors
-  4. The live contact form is submitted with real data and the email notification arrives in the inbox
-  5. The sitemap.xml is submitted to Google Search Console and shows all 15 URLs indexed
-**Plans**: TBD
+  3. All 16 pages are manually visited in a browser and render correctly with no console errors
+  4. The live contact form is submitted with valid data and the success state is displayed (email delivery skipped — portfolio demo)
+  5. The sitemap.xml is accessible and lists all 16 URLs
+**Plans**: 2 plans
 
 Plans:
-- [ ] 07-01: Run Lighthouse on deployed URL for all key pages; document scores; fix any failing audits (aria-labels, console errors, CLS); re-run until 95+ confirmed
-- [ ] 07-02: Run Google Rich Results Test on all schema types; manually browse all 15 pages; test live form submission; submit sitemap.xml to Google Search Console
+- [ ] 07-01-PLAN.md — Run Lighthouse on deployed URL for all key pages; document scores; fix any failing audits (aria-labels, console errors, CLS); re-run until 95+ confirmed
+- [ ] 07-02-PLAN.md — Automated QA checks, manual QA checklist for Andrew, Google Rich Results Test, form test, and FUTURE_DIRECTIONS.md completion report
 
 ## Progress
 
