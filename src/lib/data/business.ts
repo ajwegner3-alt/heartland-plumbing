@@ -8,6 +8,7 @@ export interface BusinessData {
   name: string
   phone: string
   phoneHref: string
+  email: string
   address: {
     street: string
     city: string
@@ -43,6 +44,7 @@ export const BUSINESS: BusinessData = {
   name: 'Heartland Plumbing Co.',
   phone: '(402) 555-0147',
   phoneHref: 'tel:+14025550147',
+  email: 'info@heartlandplumbingomaha.com',
   address: {
     street: '4521 S 84th St',
     city: 'Omaha',
