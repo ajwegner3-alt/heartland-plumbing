@@ -178,8 +178,8 @@ Which phases cover which requirements. Updated during roadmap creation.
 | CONV-01 | Phase 1 | Complete |
 | CONV-02 | Phase 1 | Complete |
 | CONV-03 | Phase 3 | Complete |
-| CONV-04 | Phase 6 | Pending |
-| CONV-05 | Phase 6 | Pending |
+| CONV-04 | Phase 6 | Complete |
+| CONV-05 | Phase 6 | Complete |
 | CONV-06 | Phase 3 | Complete |
 | CONV-07 | Phase 3 | Complete |
 | CONV-08 | Phase 4 | Complete |
@@ -206,10 +206,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 | AREA-08 | Phase 5 | Complete |
 | AREA-09 | Phase 5 | Complete |
 | AREA-10 | Phase 5 | Complete |
-| ABOUT-01 | Phase 6 | Pending |
-| ABOUT-02 | Phase 6 | Pending |
-| CONTACT-01 | Phase 6 | Pending |
-| CONTACT-02 | Phase 6 | Pending |
+| ABOUT-01 | Phase 6 | Complete |
+| ABOUT-02 | Phase 6 | Complete |
+| CONTACT-01 | Phase 6 | Complete |
+| CONTACT-02 | Phase 6 | Complete |
 | NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 1 | Complete |
 | NAV-03 | Phase 1 | Complete |
