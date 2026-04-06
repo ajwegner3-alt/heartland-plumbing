@@ -109,11 +109,11 @@ Plans:
   2. The Contact page shows the form with name, phone, service needed, and zip code fields — phone is the first prominent field
   3. Submitting the form with valid data sends an email notification via Resend and shows a success state to the user
   4. Submitting the form with missing required fields or a malformed phone number shows inline validation errors without a page reload
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 06-01: Build About page with company story, credentials section, license/insurance trust signals, and team narrative
-- [ ] 06-02: Build ContactForm.tsx (Client Component) with React Hook Form + Zod validation; build /api/contact Route Handler with Resend; add Resend API key to Vercel dashboard; test live form submission end-to-end
+- [ ] 06-01-PLAN.md — Add BUSINESS.email field, build branded HTML email template, build About page with company story, owner spotlight, and credentials badges
+- [ ] 06-02-PLAN.md — Install Resend, build ContactForm client component with honeypot and inline success, build /api/contact route handler, build Contact page shell, update sitemap
 
 ### Phase 7: Manual QA and Verification
 **Goal**: Every page on the live Vercel deployment is verified by a human, Lighthouse scores are confirmed at 95+ across all four categories, and all schema types pass Google's Rich Results Test — before the project is marked complete.
