@@ -170,7 +170,7 @@ export default function HomePage() {
               </div>
 
               {/* Trust signals row — badge-style containers for visual weight parity */}
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-stretch gap-3 flex-wrap">
                 {/* Google rating badge */}
                 <div className="flex items-center gap-2.5 bg-white/10 backdrop-blur-sm border border-white/15 rounded-md px-4 py-2.5">
                   <svg width="22" height="22" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" className="shrink-0" aria-hidden="true">
@@ -202,9 +202,9 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* BBB Accredited Business seal — sized to match frosted badge height */}
-                <div className="flex items-center shrink-0">
-                  <svg width="170" height="44" viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" className="rounded-md" aria-label="BBB Accredited Business A+ Rating">
+                {/* BBB Accredited Business seal — height matched to frosted badges via self-stretch */}
+                <div className="flex items-stretch shrink-0 self-stretch">
+                  <svg viewBox="0 0 240 56" xmlns="http://www.w3.org/2000/svg" className="rounded-md h-full w-auto" aria-label="BBB Accredited Business A+ Rating">
                     <rect width="240" height="56" rx="6" fill="#00607B"/>
                     <g transform="translate(10,6)">
                       <path d="M12 0C12 0 8 6 8 10c0 2.2 1.8 4 4 4s4-1.8 4-4C16 6 12 0 12 0z" fill="#FFB81C"/>
