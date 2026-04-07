@@ -12,14 +12,19 @@ export function ScrollReveal({
   useEffect(() => {
     const el = ref.current
     if (!el) return
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      el.classList.add('visible')
-      return
-    }
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    // Apply hidden state via JS only — SSR/Lighthouse sees fully visible content
+    // which improves Speed Index. Real users with JS still get the animation.
+    el.style.opacity = '0'
+    el.style.transform = 'translateY(2rem)'
+    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease'
+
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          el.classList.add('visible')
+          el.style.opacity = '1'
+          el.style.transform = 'translateY(0)'
           obs.disconnect()
         }
       },
@@ -29,10 +34,7 @@ export function ScrollReveal({
     return () => obs.disconnect()
   }, [])
   return (
-    <div
-      ref={ref}
-      className={`opacity-0 translate-y-8 transition-all duration-700 [&.visible]:opacity-100 [&.visible]:translate-y-0 ${className}`}
-    >
+    <div ref={ref} className={className}>
       {children}
     </div>
   )
