@@ -37,24 +37,28 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bitter.variable} ${nunitoSans.variable}`}>
       <head>
-        {/* Replace GTM-XXXXXXX with your Google Tag Manager container ID */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        {/* GTM — add NEXT_PUBLIC_GTM_ID to Vercel env vars to activate */}
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');`,
-          }}
-        />
+})(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`,
+            }}
+          />
+        )}
       </head>
       <body className="font-body text-text-primary antialiased pb-20 md:pb-0">
-        {/* GTM noscript fallback — replace GTM-XXXXXXX with your container ID */}
-        <noscript
-          dangerouslySetInnerHTML={{
-            __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
-          }}
-        />
+        {/* GTM noscript fallback — only renders when NEXT_PUBLIC_GTM_ID is set */}
+        {process.env.NEXT_PUBLIC_GTM_ID && (
+          <noscript
+            dangerouslySetInnerHTML={{
+              __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>`,
+            }}
+          />
+        )}
         <Header />
         <main>{children}</main>
         <Footer />
