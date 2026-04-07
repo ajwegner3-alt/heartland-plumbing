@@ -37,9 +37,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${bitter.variable} ${nunitoSans.variable}`}>
       <head>
-        {/* Preconnect to Unsplash CDN — reduces hero image LCP latency */}
-        <link rel="preconnect" href="https://images.unsplash.com" />
-        <link rel="dns-prefetch" href="https://images.unsplash.com" />
         {/* Replace GTM-XXXXXXX with your Google Tag Manager container ID */}
         <script
           dangerouslySetInnerHTML={{

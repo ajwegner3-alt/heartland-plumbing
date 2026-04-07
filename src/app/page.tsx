@@ -102,7 +102,7 @@ export default function HomePage() {
         {/* Background image — LCP element, priority load */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=1920&q=80"
+            src="/images/hero-plumber.jpg"
             alt=""
             fill
             priority
